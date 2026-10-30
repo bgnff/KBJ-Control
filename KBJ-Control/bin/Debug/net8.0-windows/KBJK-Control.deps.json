@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "KBJK-Control/1.0.0": {
+        "dependencies": {
+          "AntdUI": "2.4.17"
+        },
+        "runtime": {
+          "KBJK-Control.dll": {}
+        }
+      },
+      "AntdUI/2.4.17": {
+        "runtime": {
+          "lib/net8.0-windows7.0/AntdUI.dll": {
+            "assemblyVersion": "2.4.17.0",
+            "fileVersion": "2.4.17.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "KBJK-Control/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AntdUI/2.4.17": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-liGv4JujAR7xJidcydM9ACwTW79U0h+HjI596L5pzkASNgbFp4PjcoeqpOqTASuwRYTNXwMMTb4pRb7Kn41kdw==",
+      "path": "antdui/2.4.17",
+      "hashPath": "antdui.2.4.17.nupkg.sha512"
+    }
+  }
+}

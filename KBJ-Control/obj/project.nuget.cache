@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "zuc04J3qSIU=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\bgn\\source\\repos\\bgnff\\KBJK-Control\\KBJK-Control\\KBJ-Control.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\bgn\\.nuget\\packages\\antdui\\2.4.17\\antdui.2.4.17.nupkg.sha512"
+  ],
+  "logs": []
+}
