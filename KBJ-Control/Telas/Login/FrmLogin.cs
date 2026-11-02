@@ -1,4 +1,5 @@
 using KBJK_Control.Telas.Inicial;
+using KBJK_Control.Telas.Principal;
 using MySqlConnector;
 
 namespace KBJK_Control
@@ -49,12 +50,11 @@ namespace KBJK_Control
 
                 if (loginSucesso)
                 {
-                    // Destino provisório mantido da versão da equipe.
                     this.Hide();
 
-                    using (var boasVindas = new FrmBoasVindas())
+                    using (var telaPrincipal = new FrmPrincipal())
                     {
-                        boasVindas.ShowDialog();
+                        telaPrincipal.ShowDialog();
                     }
 
                     this.Close();
