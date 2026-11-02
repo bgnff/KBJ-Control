@@ -1,7 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "D:\\Documentos\\Visual Studio - Projects\\GitClone\\KBJ-Control\\KBJ-Control.csproj": {}
   },
   "projects": {
@@ -13,19 +12,6 @@
         "projectPath": "D:\\Documentos\\Visual Studio - Projects\\GitClone\\KBJ-Control\\KBJ-Control.csproj",
         "packagesPath": "C:\\Users\\YemYu\\.nuget\\packages\\",
         "outputPath": "D:\\Documentos\\Visual Studio - Projects\\GitClone\\KBJ-Control\\obj\\",
-=======
-    "C:\\Users\\bgn\\Desktop\\KBJ_Control\\KBJ-Control\\KBJ-Control\\KBJ-Control.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\bgn\\Desktop\\KBJ_Control\\KBJ-Control\\KBJ-Control\\KBJ-Control.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\bgn\\Desktop\\KBJ_Control\\KBJ-Control\\KBJ-Control\\KBJ-Control.csproj",
-        "projectName": "KBJ-Control",
-        "projectPath": "C:\\Users\\bgn\\Desktop\\KBJ_Control\\KBJ-Control\\KBJ-Control\\KBJ-Control.csproj",
-        "packagesPath": "C:\\Users\\bgn\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bgn\\Desktop\\KBJ_Control\\KBJ-Control\\KBJ-Control\\obj\\",
->>>>>>> 446d15fe80516634b55859e6f5c7db3a8c171e63
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\YemYu\\AppData\\Roaming\\NuGet\\NuGet.Config",

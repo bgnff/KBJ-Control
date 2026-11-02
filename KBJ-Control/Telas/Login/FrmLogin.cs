@@ -1,4 +1,5 @@
 using KBJK_Control.Telas.Inicial;
+using KBJK_Control.Telas.Principal;
 using MySqlConnector;
 
 namespace KBJK_Control
@@ -61,9 +62,9 @@ namespace KBJK_Control
                     //APENAS PARA TESTAR, NÃO TEM TELA INICIAL
                     this.Hide();
 
-                    using (var piu = new FrmBoasVindas())
+                    using (var telaPrincipal = new FrmPrincipal())
                     {
-                        piu.ShowDialog();
+                        telaPrincipal.ShowDialog();
                     }
 
                     this.Close();
