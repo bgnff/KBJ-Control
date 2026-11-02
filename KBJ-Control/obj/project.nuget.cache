@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "pq/4VnZe9tQ=",
   "success": true,
   "projectFilePath": "D:\\Documentos\\Visual Studio - Projects\\GitClone\\KBJ-Control\\KBJ-Control.csproj",
+=======
+  "dgSpecHash": "0le7e2W/x3Q=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\bgn\\Desktop\\KBJ_Control\\KBJ-Control\\KBJ-Control\\KBJ-Control.csproj",
+>>>>>>> 446d15fe80516634b55859e6f5c7db3a8c171e63
   "expectedPackageFiles": [
     "C:\\Users\\YemYu\\.nuget\\packages\\antdui\\2.4.17\\antdui.2.4.17.nupkg.sha512",
     "C:\\Users\\YemYu\\.nuget\\packages\\bcrypt.net-next\\4.2.0\\bcrypt.net-next.4.2.0.nupkg.sha512",
