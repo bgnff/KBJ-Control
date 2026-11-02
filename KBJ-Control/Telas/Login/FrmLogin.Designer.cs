@@ -96,7 +96,6 @@
             lblLogo.Size = new Size(202, 45);
             lblLogo.TabIndex = 1;
             lblLogo.Text = "KBJ Control";
-            lblLogo.Click += label1_Click_1;
             // 
             // picLogo
             // 
@@ -163,6 +162,7 @@
             lblEsqueciSenha.Size = new Size(118, 15);
             lblEsqueciSenha.TabIndex = 5;
             lblEsqueciSenha.Text = "Esqueci minha senha";
+            lblEsqueciSenha.Click += lblEsqueciSenha_Click;
             // 
             // txtSenha
             // 
@@ -171,6 +171,7 @@
             txtSenha.PlaceholderText = " Informe sua senha.";
             txtSenha.Size = new Size(346, 23);
             txtSenha.TabIndex = 4;
+            txtSenha.TextChanged += txtSenha_TextChanged;
             txtSenha.UseSystemPasswordChar = true;
             // 
             // lblSenha
@@ -182,6 +183,7 @@
             lblSenha.Size = new Size(45, 17);
             lblSenha.TabIndex = 3;
             lblSenha.Text = "Senha";
+            lblSenha.Click += lblSenha_Click;
             // 
             // txtUser
             // 
@@ -190,6 +192,7 @@
             txtUser.PlaceholderText = "Informe seu usuário.";
             txtUser.Size = new Size(346, 23);
             txtUser.TabIndex = 2;
+            txtUser.TextChanged += txtUser_TextChanged;
             txtUser.Enter += txtUser_Enter;
             // 
             // lblUser
@@ -201,6 +204,7 @@
             lblUser.Size = new Size(116, 19);
             lblUser.TabIndex = 1;
             lblUser.Text = "Nome de usuário";
+            lblUser.Click += lblUser_Click;
             // 
             // lblPreencha
             // 
@@ -212,6 +216,7 @@
             lblPreencha.Size = new Size(207, 21);
             lblPreencha.TabIndex = 0;
             lblPreencha.Text = "Preencha suas informações";
+            lblPreencha.Click += lblPreencha_Click;
             // 
             // btnEntrar
             // 

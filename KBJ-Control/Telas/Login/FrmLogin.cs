@@ -10,34 +10,20 @@ namespace KBJK_Control
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
         }
 
         private void tlpCentral_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void tlpCentral_Paint_1(object sender, PaintEventArgs e)
         {
-
         }
 
         private void txtUser_Enter(object sender, EventArgs e)
         {
-
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
@@ -47,7 +33,12 @@ namespace KBJK_Control
 
             if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(senha))
             {
-                MessageBox.Show("Por favor, preencha o usuário e a senha.", "Campos obrigatórios", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(
+                    "Por favor, preencha o usuário e a senha.",
+                    "Campos obrigatórios",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
                 return;
             }
 
@@ -58,25 +49,57 @@ namespace KBJK_Control
 
                 if (loginSucesso)
                 {
-                    //APENAS PARA TESTAR, NÃO TEM TELA INICIAL
+                    // Destino provisório mantido da versão da equipe.
                     this.Hide();
 
-                    using (var piu = new FrmBoasVindas())
+                    using (var boasVindas = new FrmBoasVindas())
                     {
-                        piu.ShowDialog();
+                        boasVindas.ShowDialog();
                     }
 
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Usuário ou senha incorretos ou inexistentes.", "Falha no LogIn", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(
+                        "Usuário ou senha incorretos ou inexistentes.",
+                        "Falha no login",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro no sistema: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    "Erro no sistema: " + ex.Message,
+                    "Erro",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
+        }
+
+        private void lblPreencha_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void lblSenha_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void lblEsqueciSenha_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void txtSenha_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtUser_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void lblUser_Click(object sender, EventArgs e)
+        {
         }
     }
 }
