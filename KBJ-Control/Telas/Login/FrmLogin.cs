@@ -59,7 +59,6 @@ namespace KBJK_Control
 
                 if (loginSucesso)
                 {
-                    //APENAS PARA TESTAR, NÃO TEM TELA INICIAL
                     this.Hide();
 
                     using (var telaPrincipal = new FrmPrincipal())
