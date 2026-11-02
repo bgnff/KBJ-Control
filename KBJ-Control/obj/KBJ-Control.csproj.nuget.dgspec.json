@@ -56,6 +56,14 @@
             "AntdUI": {
               "target": "Package",
               "version": "[2.4.17, )"
+            },
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.2.0, )"
+            },
+            "MySqlConnector": {
+              "target": "Package",
+              "version": "[2.6.2, )"
             }
           },
           "imports": [

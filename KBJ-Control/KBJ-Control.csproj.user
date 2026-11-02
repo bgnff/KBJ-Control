@@ -1,10 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Compile Update="Telas\Dashboard\ucDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Telas\Inicial\FrmBoasVindas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Telas\Login\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Telas\Principal\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Telas\Recepcao\UserControl1.cs">
