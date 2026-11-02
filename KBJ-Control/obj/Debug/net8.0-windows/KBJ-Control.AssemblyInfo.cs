@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KBJ-Control")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+85411a12249eed6ad3cf112205af7346302325c1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8c79ed800ee87aaf7635c8c518225f0ebd51de5c")]
 [assembly: System.Reflection.AssemblyProductAttribute("KBJ-Control")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KBJ-Control")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
