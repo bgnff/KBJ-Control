@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
-            tlpPrincipal = new TableLayoutPanel();
+            tlpLogin = new TableLayoutPanel();
             tlpLogo = new TableLayoutPanel();
             lblLogo = new Label();
             picLogo = new PictureBox();
@@ -42,31 +42,31 @@
             lblUser = new Label();
             lblPreencha = new Label();
             btnEntrar = new Button();
-            tlpPrincipal.SuspendLayout();
+            tlpLogin.SuspendLayout();
             tlpLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picLogo).BeginInit();
             pnlCentral.SuspendLayout();
             tlpCentral.SuspendLayout();
             SuspendLayout();
             // 
-            // tlpPrincipal
+            // tlpLogin
             // 
-            tlpPrincipal.Anchor = AnchorStyles.None;
-            tlpPrincipal.ColumnCount = 3;
-            tlpPrincipal.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 34.1463432F));
-            tlpPrincipal.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 65.85366F));
-            tlpPrincipal.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 194F));
-            tlpPrincipal.Controls.Add(tlpLogo, 1, 0);
-            tlpPrincipal.Controls.Add(pnlCentral, 1, 1);
-            tlpPrincipal.Location = new Point(0, 0);
-            tlpPrincipal.Margin = new Padding(0);
-            tlpPrincipal.Name = "tlpPrincipal";
-            tlpPrincipal.RowCount = 3;
-            tlpPrincipal.RowStyles.Add(new RowStyle(SizeType.Percent, 25.454546F));
-            tlpPrincipal.RowStyles.Add(new RowStyle(SizeType.Percent, 74.5454559F));
-            tlpPrincipal.RowStyles.Add(new RowStyle(SizeType.Absolute, 64F));
-            tlpPrincipal.Size = new Size(800, 450);
-            tlpPrincipal.TabIndex = 0;
+            tlpLogin.Anchor = AnchorStyles.None;
+            tlpLogin.ColumnCount = 3;
+            tlpLogin.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 34.1463432F));
+            tlpLogin.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 65.85366F));
+            tlpLogin.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 194F));
+            tlpLogin.Controls.Add(tlpLogo, 1, 0);
+            tlpLogin.Controls.Add(pnlCentral, 1, 1);
+            tlpLogin.Location = new Point(0, 0);
+            tlpLogin.Margin = new Padding(0);
+            tlpLogin.Name = "tlpLogin";
+            tlpLogin.RowCount = 3;
+            tlpLogin.RowStyles.Add(new RowStyle(SizeType.Percent, 25.454546F));
+            tlpLogin.RowStyles.Add(new RowStyle(SizeType.Percent, 74.5454559F));
+            tlpLogin.RowStyles.Add(new RowStyle(SizeType.Absolute, 64F));
+            tlpLogin.Size = new Size(800, 450);
+            tlpLogin.TabIndex = 0;
             // 
             // tlpLogo
             // 
@@ -233,12 +233,12 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(tlpPrincipal);
+            Controls.Add(tlpLogin);
             Name = "frmLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "KBJ Control - Login";
             WindowState = FormWindowState.Maximized;
-            tlpPrincipal.ResumeLayout(false);
+            tlpLogin.ResumeLayout(false);
             tlpLogo.ResumeLayout(false);
             tlpLogo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picLogo).EndInit();
@@ -250,7 +250,7 @@
 
         #endregion
 
-        private TableLayoutPanel tlpPrincipal;
+        private TableLayoutPanel tlpLogin;
         private TableLayoutPanel tlpLogo;
         private PictureBox picLogo;
         private Label lblLogo;
