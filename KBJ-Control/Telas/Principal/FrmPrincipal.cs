@@ -29,14 +29,28 @@ namespace KBJK_Control.Telas.Principal
         }
         private void btnDashboard_Click(object sender, EventArgs e)
         {
+
         }
 
         private void btnRecepcao_Click(object sender, EventArgs e)
         {
+            
         }
 
         private void btnVisitantes_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            using (var telaLogin = new frmLogin())
+            {
+                telaLogin.ShowDialog();
+            }
+            this.Close();
         }
     }
 }

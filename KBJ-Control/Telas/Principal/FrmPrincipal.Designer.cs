@@ -296,6 +296,7 @@
             btnSair.Text = "Sair";
             btnSair.TextAlign = ContentAlignment.MiddleLeft;
             btnSair.UseVisualStyleBackColor = false;
+            btnSair.Click += btnSair_Click;
             // 
             // pnlConteudo
             // 
