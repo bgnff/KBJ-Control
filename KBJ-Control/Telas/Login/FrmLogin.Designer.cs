@@ -171,6 +171,7 @@
             txtSenha.PlaceholderText = " Informe sua senha.";
             txtSenha.Size = new Size(346, 23);
             txtSenha.TabIndex = 4;
+            txtSenha.UseSystemPasswordChar = true;
             // 
             // lblSenha
             // 
@@ -227,6 +228,7 @@
             btnEntrar.TabIndex = 6;
             btnEntrar.Text = "Entrar";
             btnEntrar.UseVisualStyleBackColor = false;
+            btnEntrar.Click += btnEntrar_Click;
             // 
             // frmLogin
             // 
