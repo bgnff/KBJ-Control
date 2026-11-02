@@ -13,5 +13,8 @@
     <Compile Update="Telas\Principal\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Telas\Recepcao\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
