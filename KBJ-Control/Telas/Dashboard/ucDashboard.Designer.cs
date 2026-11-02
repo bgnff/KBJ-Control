@@ -28,26 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             tlpDashboard = new TableLayoutPanel();
             pnlCabecalhoDashboard = new Panel();
             lblDescricaoDashboard = new Label();
             lblTituloDashboard = new Label();
             tlpIndicadores = new TableLayoutPanel();
             pnlPresentes = new Panel();
-            lblTotalPresentes = new Label();
             lblTituloPresentes = new Label();
+            lblTotalPresentes = new Label();
             pnlEntradas = new Panel();
-            lblTotalEntradas = new Label();
             lblTituloEntradas = new Label();
+            lblTotalEntradas = new Label();
             pnlSaidas = new Panel();
-            lblTotalSaidas = new Label();
             lblTituloSaidas = new Label();
+            lblTotalSaidas = new Label();
             pnlCadastros = new Panel();
-            lblTotalCadastros = new Label();
             lblTituloCadastros = new Label();
+            lblTotalCadastros = new Label();
             tlpVisitasDashboard = new TableLayoutPanel();
             lblTituloVisitas = new Label();
             dgvVisitasHoje = new DataGridView();
+            colVisitante = new DataGridViewTextBoxColumn();
+            colEmpresa = new DataGridViewTextBoxColumn();
+            colDestino = new DataGridViewTextBoxColumn();
+            colEntrada = new DataGridViewTextBoxColumn();
+            colSaida = new DataGridViewTextBoxColumn();
+            colSituacao = new DataGridViewTextBoxColumn();
             tlpDashboard.SuspendLayout();
             pnlCabecalhoDashboard.SuspendLayout();
             tlpIndicadores.SuspendLayout();
@@ -144,16 +151,6 @@
             pnlPresentes.Size = new Size(226, 104);
             pnlPresentes.TabIndex = 0;
             // 
-            // lblTotalPresentes
-            // 
-            lblTotalPresentes.AutoSize = true;
-            lblTotalPresentes.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
-            lblTotalPresentes.Location = new Point(12, 38);
-            lblTotalPresentes.Name = "lblTotalPresentes";
-            lblTotalPresentes.Size = new Size(38, 45);
-            lblTotalPresentes.TabIndex = 1;
-            lblTotalPresentes.Text = "0";
-            // 
             // lblTituloPresentes
             // 
             lblTituloPresentes.AutoSize = true;
@@ -164,6 +161,16 @@
             lblTituloPresentes.Size = new Size(107, 19);
             lblTituloPresentes.TabIndex = 0;
             lblTituloPresentes.Text = "Presentes agora";
+            // 
+            // lblTotalPresentes
+            // 
+            lblTotalPresentes.AutoSize = true;
+            lblTotalPresentes.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
+            lblTotalPresentes.Location = new Point(12, 38);
+            lblTotalPresentes.Name = "lblTotalPresentes";
+            lblTotalPresentes.Size = new Size(38, 45);
+            lblTotalPresentes.TabIndex = 1;
+            lblTotalPresentes.Text = "0";
             // 
             // pnlEntradas
             // 
@@ -178,16 +185,6 @@
             pnlEntradas.Size = new Size(226, 104);
             pnlEntradas.TabIndex = 1;
             // 
-            // lblTotalEntradas
-            // 
-            lblTotalEntradas.AutoSize = true;
-            lblTotalEntradas.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
-            lblTotalEntradas.Location = new Point(12, 38);
-            lblTotalEntradas.Name = "lblTotalEntradas";
-            lblTotalEntradas.Size = new Size(38, 45);
-            lblTotalEntradas.TabIndex = 1;
-            lblTotalEntradas.Text = "0";
-            // 
             // lblTituloEntradas
             // 
             lblTituloEntradas.AutoSize = true;
@@ -198,6 +195,16 @@
             lblTituloEntradas.Size = new Size(92, 19);
             lblTituloEntradas.TabIndex = 0;
             lblTituloEntradas.Text = "Entradas hoje";
+            // 
+            // lblTotalEntradas
+            // 
+            lblTotalEntradas.AutoSize = true;
+            lblTotalEntradas.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
+            lblTotalEntradas.Location = new Point(12, 38);
+            lblTotalEntradas.Name = "lblTotalEntradas";
+            lblTotalEntradas.Size = new Size(38, 45);
+            lblTotalEntradas.TabIndex = 1;
+            lblTotalEntradas.Text = "0";
             // 
             // pnlSaidas
             // 
@@ -212,16 +219,6 @@
             pnlSaidas.Size = new Size(226, 104);
             pnlSaidas.TabIndex = 2;
             // 
-            // lblTotalSaidas
-            // 
-            lblTotalSaidas.AutoSize = true;
-            lblTotalSaidas.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
-            lblTotalSaidas.Location = new Point(12, 38);
-            lblTotalSaidas.Name = "lblTotalSaidas";
-            lblTotalSaidas.Size = new Size(38, 45);
-            lblTotalSaidas.TabIndex = 1;
-            lblTotalSaidas.Text = "0";
-            // 
             // lblTituloSaidas
             // 
             lblTituloSaidas.AutoSize = true;
@@ -232,6 +229,16 @@
             lblTituloSaidas.Size = new Size(77, 19);
             lblTituloSaidas.TabIndex = 0;
             lblTituloSaidas.Text = "Saídas hoje";
+            // 
+            // lblTotalSaidas
+            // 
+            lblTotalSaidas.AutoSize = true;
+            lblTotalSaidas.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
+            lblTotalSaidas.Location = new Point(12, 38);
+            lblTotalSaidas.Name = "lblTotalSaidas";
+            lblTotalSaidas.Size = new Size(38, 45);
+            lblTotalSaidas.TabIndex = 1;
+            lblTotalSaidas.Text = "0";
             // 
             // pnlCadastros
             // 
@@ -246,16 +253,6 @@
             pnlCadastros.Size = new Size(226, 104);
             pnlCadastros.TabIndex = 3;
             // 
-            // lblTotalCadastros
-            // 
-            lblTotalCadastros.AutoSize = true;
-            lblTotalCadastros.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
-            lblTotalCadastros.Location = new Point(12, 38);
-            lblTotalCadastros.Name = "lblTotalCadastros";
-            lblTotalCadastros.Size = new Size(38, 45);
-            lblTotalCadastros.TabIndex = 1;
-            lblTotalCadastros.Text = "0";
-            // 
             // lblTituloCadastros
             // 
             lblTituloCadastros.AutoSize = true;
@@ -266,6 +263,16 @@
             lblTituloCadastros.Size = new Size(100, 19);
             lblTituloCadastros.TabIndex = 0;
             lblTituloCadastros.Text = "Cadastros hoje";
+            // 
+            // lblTotalCadastros
+            // 
+            lblTotalCadastros.AutoSize = true;
+            lblTotalCadastros.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
+            lblTotalCadastros.Location = new Point(12, 38);
+            lblTotalCadastros.Name = "lblTotalCadastros";
+            lblTotalCadastros.Size = new Size(38, 45);
+            lblTotalCadastros.TabIndex = 1;
+            lblTotalCadastros.Text = "0";
             // 
             // tlpVisitasDashboard
             // 
@@ -298,20 +305,81 @@
             // 
             dgvVisitasHoje.AllowUserToAddRows = false;
             dgvVisitasHoje.AllowUserToDeleteRows = false;
+            dgvVisitasHoje.AllowUserToResizeRows = false;
             dgvVisitasHoje.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvVisitasHoje.BackgroundColor = Color.White;
             dgvVisitasHoje.BorderStyle = BorderStyle.None;
-            dgvVisitasHoje.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(237, 240, 243);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(48, 55, 65);
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvVisitasHoje.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvVisitasHoje.ColumnHeadersHeight = 40;
+            dgvVisitasHoje.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvVisitasHoje.Columns.AddRange(new DataGridViewColumn[] { colVisitante, colEmpresa, colDestino, colEntrada, colSaida, colSituacao });
             dgvVisitasHoje.Dock = DockStyle.Fill;
+            dgvVisitasHoje.EnableHeadersVisualStyles = false;
+            dgvVisitasHoje.GridColor = Color.FromArgb(212, 217, 223);
             dgvVisitasHoje.Location = new Point(0, 40);
             dgvVisitasHoje.Margin = new Padding(0);
             dgvVisitasHoje.MultiSelect = false;
             dgvVisitasHoje.Name = "dgvVisitasHoje";
             dgvVisitasHoje.ReadOnly = true;
             dgvVisitasHoje.RowHeadersVisible = false;
+            dgvVisitasHoje.RowTemplate.DefaultCellStyle.BackColor = Color.White;
+            dgvVisitasHoje.RowTemplate.DefaultCellStyle.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dgvVisitasHoje.RowTemplate.DefaultCellStyle.ForeColor = Color.FromArgb(48, 55, 65);
+            dgvVisitasHoje.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.Black;
+            dgvVisitasHoje.RowTemplate.DefaultCellStyle.SelectionForeColor = Color.FromArgb(250, 239, 203);
+            dgvVisitasHoje.RowTemplate.Height = 36;
             dgvVisitasHoje.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvVisitasHoje.Size = new Size(952, 449);
             dgvVisitasHoje.TabIndex = 1;
+            // 
+            // colVisitante
+            // 
+            colVisitante.FillWeight = 140F;
+            colVisitante.HeaderText = "Visitante";
+            colVisitante.Name = "colVisitante";
+            colVisitante.ReadOnly = true;
+            // 
+            // colEmpresa
+            // 
+            colEmpresa.FillWeight = 120F;
+            colEmpresa.HeaderText = "Empresa de origem";
+            colEmpresa.Name = "colEmpresa";
+            colEmpresa.ReadOnly = true;
+            // 
+            // colDestino
+            // 
+            colDestino.FillWeight = 150F;
+            colDestino.HeaderText = "Pessoa ou setor visitado";
+            colDestino.Name = "colDestino";
+            colDestino.ReadOnly = true;
+            // 
+            // colEntrada
+            // 
+            colEntrada.FillWeight = 85F;
+            colEntrada.HeaderText = "Entrada";
+            colEntrada.Name = "colEntrada";
+            colEntrada.ReadOnly = true;
+            // 
+            // colSaida
+            // 
+            colSaida.FillWeight = 85F;
+            colSaida.HeaderText = "Saída";
+            colSaida.Name = "colSaida";
+            colSaida.ReadOnly = true;
+            // 
+            // colSituacao
+            // 
+            colSituacao.FillWeight = 90F;
+            colSituacao.HeaderText = "Situação";
+            colSituacao.Name = "colSituacao";
+            colSituacao.ReadOnly = true;
             // 
             // ucDashboard
             // 
@@ -364,5 +432,11 @@
         private TableLayoutPanel tlpVisitasDashboard;
         private Label lblTituloVisitas;
         private DataGridView dgvVisitasHoje;
+        private DataGridViewTextBoxColumn colVisitante;
+        private DataGridViewTextBoxColumn colEmpresa;
+        private DataGridViewTextBoxColumn colDestino;
+        private DataGridViewTextBoxColumn colEntrada;
+        private DataGridViewTextBoxColumn colSaida;
+        private DataGridViewTextBoxColumn colSituacao;
     }
 }
