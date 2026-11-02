@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KBJK_Control.Telas.Dashboard;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,11 @@ namespace KBJK_Control.Telas.Principal
         public FrmPrincipal()
         {
             InitializeComponent();
+
+            var dashboard = new ucDashboard();
+            dashboard.Dock = DockStyle.Fill;
+
+            pnlConteudo.Controls.Add(dashboard);
         }
 
         private void btnHistorico_Click(object sender, EventArgs e)

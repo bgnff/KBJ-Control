@@ -102,20 +102,23 @@
             // lblDescricao
             // 
             lblDescricao.AutoSize = true;
-            lblDescricao.Location = new Point(24, 57);
+            lblDescricao.BackColor = Color.Transparent;
+            lblDescricao.Font = new Font("Segoe UI", 10F);
+            lblDescricao.ForeColor = Color.FromArgb(101, 112, 124);
+            lblDescricao.Location = new Point(0, 42);
             lblDescricao.Name = "lblDescricao";
-            lblDescricao.Size = new Size(219, 15);
+            lblDescricao.Size = new Size(258, 19);
             lblDescricao.TabIndex = 2;
             lblDescricao.Text = "Controle de entrada e saída de visitantes";
             // 
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
-            lblTitulo.Font = new Font("Arial", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTitulo.Font = new Font("Segoe UI", 20F);
             lblTitulo.ForeColor = SystemColors.ActiveCaptionText;
-            lblTitulo.Location = new Point(24, 14);
+            lblTitulo.Location = new Point(0, 0);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(137, 32);
+            lblTitulo.Size = new Size(130, 37);
             lblTitulo.TabIndex = 1;
             lblTitulo.Text = "Recepção";
             // 
