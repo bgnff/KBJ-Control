@@ -1,4 +1,5 @@
 ﻿using KBJK_Control.Telas.Dashboard;
+using KBJK_Control.Telas.Recepcao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,10 +18,44 @@ namespace KBJK_Control.Telas.Principal
         {
             InitializeComponent();
 
-            var dashboard = new ucDashboard();
-            dashboard.Dock = DockStyle.Fill;
+            AbrirTela(new ucDashboard());
+            SelecionarBotao(btnDashboard);
+        }
 
-            pnlConteudo.Controls.Add(dashboard);
+        private void AbrirTela(UserControl tela)
+        {
+            // Libera a tela anterior.
+            while (pnlConteudo.Controls.Count > 0)
+            {
+                var anterior = pnlConteudo.Controls[0];
+                pnlConteudo.Controls.Remove(anterior);
+                anterior.Dispose();
+            }
+
+            tela.Dock = DockStyle.Fill;
+            pnlConteudo.Controls.Add(tela);
+        }
+
+        private void SelecionarBotao(Button selecionado)
+        {
+            Button[] botoes =
+            {
+                btnDashboard,
+                btnRecepcao,
+                btnVisitantes,
+                btnHistorico
+             };
+
+            foreach (var botao in botoes)
+            {
+                bool ativo = botao == selecionado;
+
+                botao.BackColor = ativo
+                    ? Color.FromArgb(212, 165, 30)
+                    : Color.FromArgb(37, 45, 56);
+
+                botao.ForeColor = ativo ? Color.Black : Color.White;
+            }
         }
 
         private void btnHistorico_Click(object sender, EventArgs e)
@@ -30,11 +65,15 @@ namespace KBJK_Control.Telas.Principal
         private void btnDashboard_Click(object sender, EventArgs e)
         {
 
+            AbrirTela(new ucDashboard());
+            SelecionarBotao(btnDashboard);
+
         }
 
         private void btnRecepcao_Click(object sender, EventArgs e)
         {
-            
+            AbrirTela(new ucRecepcao());
+            SelecionarBotao(btnRecepcao);
         }
 
         private void btnVisitantes_Click(object sender, EventArgs e)
@@ -52,5 +91,7 @@ namespace KBJK_Control.Telas.Principal
             }
             this.Close();
         }
+
+
     }
 }
