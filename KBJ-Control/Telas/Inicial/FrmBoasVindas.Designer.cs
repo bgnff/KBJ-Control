@@ -187,6 +187,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "KBJ Control";
             WindowState = FormWindowState.Maximized;
+            Load += FrmBoasVindas_Load;
             tlpEstrutura.ResumeLayout(false);
             tlpCentral.ResumeLayout(false);
             tlpBoasVindas.ResumeLayout(false);

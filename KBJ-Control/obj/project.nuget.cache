@@ -1,10 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "6Ag9PtCncTw=",
+  "dgSpecHash": "QOwPGG0xFR8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\bgn\\source\\repos\\bgnff\\KBJ-Control\\KBJ-Control\\KBJ-Control.csproj",
+  "projectFilePath": "C:\\Users\\bgn\\Desktop\\KBJ_Control\\KBJ-Control\\KBJ-Control\\KBJ-Control.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\bgn\\.nuget\\packages\\antdui\\2.4.17\\antdui.2.4.17.nupkg.sha512"
+    "C:\\Users\\bgn\\.nuget\\packages\\antdui\\2.4.17\\antdui.2.4.17.nupkg.sha512",
+    "C:\\Users\\bgn\\.nuget\\packages\\bcrypt.net-next\\4.2.0\\bcrypt.net-next.4.2.0.nupkg.sha512",
+    "C:\\Users\\bgn\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.2\\microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512",
+    "C:\\Users\\bgn\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.2\\microsoft.extensions.logging.abstractions.8.0.2.nupkg.sha512",
+    "C:\\Users\\bgn\\.nuget\\packages\\mysqlconnector\\2.6.2\\mysqlconnector.2.6.2.nupkg.sha512"
   ],
   "logs": []
 }

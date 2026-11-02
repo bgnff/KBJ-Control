@@ -19,7 +19,7 @@ namespace KBJK_Control.Telas.Inicial
 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
-            
+
             this.Hide();
 
             using (var login = new frmLogin())
@@ -28,6 +28,11 @@ namespace KBJK_Control.Telas.Inicial
             }
 
             this.Close();
+        }
+
+        private void FrmBoasVindas_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
