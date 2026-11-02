@@ -30,21 +30,24 @@
         {
             tlpDashboard = new TableLayoutPanel();
             pnlCabecalhoDashboard = new Panel();
-            lblTituloDashboard = new Label();
             lblDescricaoDashboard = new Label();
+            lblTituloDashboard = new Label();
             tlpIndicadores = new TableLayoutPanel();
             pnlPresentes = new Panel();
+            lblTotalPresentes = new Label();
+            lblTituloPresentes = new Label();
             pnlEntradas = new Panel();
+            lblTotalEntradas = new Label();
+            lblTituloEntradas = new Label();
             pnlSaidas = new Panel();
+            lblTotalSaidas = new Label();
+            lblTituloSaidas = new Label();
             pnlCadastros = new Panel();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            label8 = new Label();
+            lblTotalCadastros = new Label();
+            lblTituloCadastros = new Label();
+            tlpVisitasDashboard = new TableLayoutPanel();
+            lblTituloVisitas = new Label();
+            dgvVisitasHoje = new DataGridView();
             tlpDashboard.SuspendLayout();
             pnlCabecalhoDashboard.SuspendLayout();
             tlpIndicadores.SuspendLayout();
@@ -52,6 +55,8 @@
             pnlEntradas.SuspendLayout();
             pnlSaidas.SuspendLayout();
             pnlCadastros.SuspendLayout();
+            tlpVisitasDashboard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvVisitasHoje).BeginInit();
             SuspendLayout();
             // 
             // tlpDashboard
@@ -60,6 +65,7 @@
             tlpDashboard.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tlpDashboard.Controls.Add(pnlCabecalhoDashboard, 0, 0);
             tlpDashboard.Controls.Add(tlpIndicadores, 0, 1);
+            tlpDashboard.Controls.Add(tlpVisitasDashboard, 0, 2);
             tlpDashboard.Dock = DockStyle.Fill;
             tlpDashboard.Location = new Point(0, 0);
             tlpDashboard.Margin = new Padding(0);
@@ -84,6 +90,16 @@
             pnlCabecalhoDashboard.Size = new Size(952, 80);
             pnlCabecalhoDashboard.TabIndex = 0;
             // 
+            // lblDescricaoDashboard
+            // 
+            lblDescricaoDashboard.AutoSize = true;
+            lblDescricaoDashboard.ForeColor = Color.FromArgb(101, 112, 124);
+            lblDescricaoDashboard.Location = new Point(0, 42);
+            lblDescricaoDashboard.Name = "lblDescricaoDashboard";
+            lblDescricaoDashboard.Size = new Size(290, 19);
+            lblDescricaoDashboard.TabIndex = 1;
+            lblDescricaoDashboard.Text = "\tVisão geral das entradas e saídas de visitantes";
+            // 
             // lblTituloDashboard
             // 
             lblTituloDashboard.AutoSize = true;
@@ -94,16 +110,6 @@
             lblTituloDashboard.Size = new Size(147, 37);
             lblTituloDashboard.TabIndex = 0;
             lblTituloDashboard.Text = "Dashboard";
-            // 
-            // lblDescricaoDashboard
-            // 
-            lblDescricaoDashboard.AutoSize = true;
-            lblDescricaoDashboard.ForeColor = Color.FromArgb(101, 112, 124);
-            lblDescricaoDashboard.Location = new Point(0, 42);
-            lblDescricaoDashboard.Name = "lblDescricaoDashboard";
-            lblDescricaoDashboard.Size = new Size(290, 19);
-            lblDescricaoDashboard.TabIndex = 1;
-            lblDescricaoDashboard.Text = "\tVisão geral das entradas e saídas de visitantes";
             // 
             // tlpIndicadores
             // 
@@ -129,8 +135,8 @@
             // 
             pnlPresentes.BackColor = Color.White;
             pnlPresentes.BorderStyle = BorderStyle.FixedSingle;
-            pnlPresentes.Controls.Add(label5);
-            pnlPresentes.Controls.Add(label1);
+            pnlPresentes.Controls.Add(lblTituloPresentes);
+            pnlPresentes.Controls.Add(lblTotalPresentes);
             pnlPresentes.Dock = DockStyle.Fill;
             pnlPresentes.Location = new Point(6, 0);
             pnlPresentes.Margin = new Padding(6, 0, 6, 0);
@@ -138,12 +144,33 @@
             pnlPresentes.Size = new Size(226, 104);
             pnlPresentes.TabIndex = 0;
             // 
+            // lblTotalPresentes
+            // 
+            lblTotalPresentes.AutoSize = true;
+            lblTotalPresentes.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
+            lblTotalPresentes.Location = new Point(12, 38);
+            lblTotalPresentes.Name = "lblTotalPresentes";
+            lblTotalPresentes.Size = new Size(38, 45);
+            lblTotalPresentes.TabIndex = 1;
+            lblTotalPresentes.Text = "0";
+            // 
+            // lblTituloPresentes
+            // 
+            lblTituloPresentes.AutoSize = true;
+            lblTituloPresentes.Font = new Font("Segoe UI", 10F);
+            lblTituloPresentes.ForeColor = Color.FromArgb(48, 55, 65);
+            lblTituloPresentes.Location = new Point(12, 12);
+            lblTituloPresentes.Name = "lblTituloPresentes";
+            lblTituloPresentes.Size = new Size(107, 19);
+            lblTituloPresentes.TabIndex = 0;
+            lblTituloPresentes.Text = "Presentes agora";
+            // 
             // pnlEntradas
             // 
             pnlEntradas.BackColor = Color.White;
             pnlEntradas.BorderStyle = BorderStyle.FixedSingle;
-            pnlEntradas.Controls.Add(label6);
-            pnlEntradas.Controls.Add(label2);
+            pnlEntradas.Controls.Add(lblTituloEntradas);
+            pnlEntradas.Controls.Add(lblTotalEntradas);
             pnlEntradas.Dock = DockStyle.Fill;
             pnlEntradas.Location = new Point(244, 0);
             pnlEntradas.Margin = new Padding(6, 0, 6, 0);
@@ -151,12 +178,33 @@
             pnlEntradas.Size = new Size(226, 104);
             pnlEntradas.TabIndex = 1;
             // 
+            // lblTotalEntradas
+            // 
+            lblTotalEntradas.AutoSize = true;
+            lblTotalEntradas.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
+            lblTotalEntradas.Location = new Point(12, 38);
+            lblTotalEntradas.Name = "lblTotalEntradas";
+            lblTotalEntradas.Size = new Size(38, 45);
+            lblTotalEntradas.TabIndex = 1;
+            lblTotalEntradas.Text = "0";
+            // 
+            // lblTituloEntradas
+            // 
+            lblTituloEntradas.AutoSize = true;
+            lblTituloEntradas.Font = new Font("Segoe UI", 10F);
+            lblTituloEntradas.ForeColor = Color.FromArgb(48, 55, 65);
+            lblTituloEntradas.Location = new Point(12, 12);
+            lblTituloEntradas.Name = "lblTituloEntradas";
+            lblTituloEntradas.Size = new Size(92, 19);
+            lblTituloEntradas.TabIndex = 0;
+            lblTituloEntradas.Text = "Entradas hoje";
+            // 
             // pnlSaidas
             // 
             pnlSaidas.BackColor = Color.White;
             pnlSaidas.BorderStyle = BorderStyle.FixedSingle;
-            pnlSaidas.Controls.Add(label7);
-            pnlSaidas.Controls.Add(label3);
+            pnlSaidas.Controls.Add(lblTituloSaidas);
+            pnlSaidas.Controls.Add(lblTotalSaidas);
             pnlSaidas.Dock = DockStyle.Fill;
             pnlSaidas.Location = new Point(482, 0);
             pnlSaidas.Margin = new Padding(6, 0, 6, 0);
@@ -164,12 +212,33 @@
             pnlSaidas.Size = new Size(226, 104);
             pnlSaidas.TabIndex = 2;
             // 
+            // lblTotalSaidas
+            // 
+            lblTotalSaidas.AutoSize = true;
+            lblTotalSaidas.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
+            lblTotalSaidas.Location = new Point(12, 38);
+            lblTotalSaidas.Name = "lblTotalSaidas";
+            lblTotalSaidas.Size = new Size(38, 45);
+            lblTotalSaidas.TabIndex = 1;
+            lblTotalSaidas.Text = "0";
+            // 
+            // lblTituloSaidas
+            // 
+            lblTituloSaidas.AutoSize = true;
+            lblTituloSaidas.Font = new Font("Segoe UI", 10F);
+            lblTituloSaidas.ForeColor = Color.FromArgb(48, 55, 65);
+            lblTituloSaidas.Location = new Point(12, 12);
+            lblTituloSaidas.Name = "lblTituloSaidas";
+            lblTituloSaidas.Size = new Size(77, 19);
+            lblTituloSaidas.TabIndex = 0;
+            lblTituloSaidas.Text = "Saídas hoje";
+            // 
             // pnlCadastros
             // 
             pnlCadastros.BackColor = Color.White;
             pnlCadastros.BorderStyle = BorderStyle.FixedSingle;
-            pnlCadastros.Controls.Add(label8);
-            pnlCadastros.Controls.Add(label4);
+            pnlCadastros.Controls.Add(lblTituloCadastros);
+            pnlCadastros.Controls.Add(lblTotalCadastros);
             pnlCadastros.Dock = DockStyle.Fill;
             pnlCadastros.Location = new Point(720, 0);
             pnlCadastros.Margin = new Padding(6, 0, 6, 0);
@@ -177,77 +246,72 @@
             pnlCadastros.Size = new Size(226, 104);
             pnlCadastros.TabIndex = 3;
             // 
-            // label1
+            // lblTotalCadastros
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(0, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(45, 19);
-            label1.TabIndex = 0;
-            label1.Text = "label1";
+            lblTotalCadastros.AutoSize = true;
+            lblTotalCadastros.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
+            lblTotalCadastros.Location = new Point(12, 38);
+            lblTotalCadastros.Name = "lblTotalCadastros";
+            lblTotalCadastros.Size = new Size(38, 45);
+            lblTotalCadastros.TabIndex = 1;
+            lblTotalCadastros.Text = "0";
             // 
-            // label2
+            // lblTituloCadastros
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(3, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(45, 19);
-            label2.TabIndex = 0;
-            label2.Text = "label2";
+            lblTituloCadastros.AutoSize = true;
+            lblTituloCadastros.Font = new Font("Segoe UI", 10F);
+            lblTituloCadastros.ForeColor = Color.FromArgb(48, 55, 65);
+            lblTituloCadastros.Location = new Point(12, 12);
+            lblTituloCadastros.Name = "lblTituloCadastros";
+            lblTituloCadastros.Size = new Size(100, 19);
+            lblTituloCadastros.TabIndex = 0;
+            lblTituloCadastros.Text = "Cadastros hoje";
             // 
-            // label3
+            // tlpVisitasDashboard
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(82, 41);
-            label3.Name = "label3";
-            label3.Size = new Size(45, 19);
-            label3.TabIndex = 0;
-            label3.Text = "label3";
+            tlpVisitasDashboard.ColumnCount = 1;
+            tlpVisitasDashboard.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpVisitasDashboard.Controls.Add(lblTituloVisitas, 0, 0);
+            tlpVisitasDashboard.Controls.Add(dgvVisitasHoje, 0, 1);
+            tlpVisitasDashboard.Dock = DockStyle.Fill;
+            tlpVisitasDashboard.Location = new Point(24, 224);
+            tlpVisitasDashboard.Margin = new Padding(0);
+            tlpVisitasDashboard.Name = "tlpVisitasDashboard";
+            tlpVisitasDashboard.RowCount = 2;
+            tlpVisitasDashboard.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tlpVisitasDashboard.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpVisitasDashboard.Size = new Size(952, 489);
+            tlpVisitasDashboard.TabIndex = 2;
             // 
-            // label4
+            // lblTituloVisitas
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(38, 38);
-            label4.Name = "label4";
-            label4.Size = new Size(45, 19);
-            label4.TabIndex = 0;
-            label4.Text = "label4";
+            lblTituloVisitas.AutoSize = true;
+            lblTituloVisitas.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTituloVisitas.ForeColor = Color.FromArgb(48, 55, 65);
+            lblTituloVisitas.Location = new Point(3, 0);
+            lblTituloVisitas.Name = "lblTituloVisitas";
+            lblTituloVisitas.Size = new Size(121, 21);
+            lblTituloVisitas.TabIndex = 0;
+            lblTituloVisitas.Text = "Visitas de hoje";
             // 
-            // label5
+            // dgvVisitasHoje
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(-1, 38);
-            label5.Name = "label5";
-            label5.Size = new Size(45, 19);
-            label5.TabIndex = 1;
-            label5.Text = "label5";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(-1, 38);
-            label6.Name = "label6";
-            label6.Size = new Size(45, 19);
-            label6.TabIndex = 1;
-            label6.Text = "label6";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(20, 13);
-            label7.Name = "label7";
-            label7.Size = new Size(45, 19);
-            label7.TabIndex = 1;
-            label7.Text = "label7";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(3, 16);
-            label8.Name = "label8";
-            label8.Size = new Size(45, 19);
-            label8.TabIndex = 1;
-            label8.Text = "label8";
+            dgvVisitasHoje.AllowUserToAddRows = false;
+            dgvVisitasHoje.AllowUserToDeleteRows = false;
+            dgvVisitasHoje.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvVisitasHoje.BackgroundColor = Color.White;
+            dgvVisitasHoje.BorderStyle = BorderStyle.None;
+            dgvVisitasHoje.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvVisitasHoje.Dock = DockStyle.Fill;
+            dgvVisitasHoje.Location = new Point(0, 40);
+            dgvVisitasHoje.Margin = new Padding(0);
+            dgvVisitasHoje.MultiSelect = false;
+            dgvVisitasHoje.Name = "dgvVisitasHoje";
+            dgvVisitasHoje.ReadOnly = true;
+            dgvVisitasHoje.RowHeadersVisible = false;
+            dgvVisitasHoje.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvVisitasHoje.Size = new Size(952, 449);
+            dgvVisitasHoje.TabIndex = 1;
             // 
             // ucDashboard
             // 
@@ -272,6 +336,9 @@
             pnlSaidas.PerformLayout();
             pnlCadastros.ResumeLayout(false);
             pnlCadastros.PerformLayout();
+            tlpVisitasDashboard.ResumeLayout(false);
+            tlpVisitasDashboard.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvVisitasHoje).EndInit();
             ResumeLayout(false);
         }
 
@@ -286,13 +353,16 @@
         private Panel pnlEntradas;
         private Panel pnlSaidas;
         private Panel pnlCadastros;
-        private Label label5;
-        private Label label1;
-        private Label label6;
-        private Label label2;
-        private Label label7;
-        private Label label3;
-        private Label label8;
-        private Label label4;
+        private Label lblTotalPresentes;
+        private Label lblTituloPresentes;
+        private Label lblTotalEntradas;
+        private Label lblTituloEntradas;
+        private Label lblTotalSaidas;
+        private Label lblTituloSaidas;
+        private Label lblTotalCadastros;
+        private Label lblTituloCadastros;
+        private TableLayoutPanel tlpVisitasDashboard;
+        private Label lblTituloVisitas;
+        private DataGridView dgvVisitasHoje;
     }
 }
