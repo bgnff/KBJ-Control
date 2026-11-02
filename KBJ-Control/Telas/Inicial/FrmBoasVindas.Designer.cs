@@ -166,11 +166,12 @@
             btnIniciar.Cursor = Cursors.Hand;
             btnIniciar.FlatAppearance.BorderSize = 0;
             btnIniciar.FlatStyle = FlatStyle.Flat;
-            btnIniciar.ForeColor = Color.White;
-            btnIniciar.Location = new Point(170, 220);
+            btnIniciar.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnIniciar.ForeColor = Color.Black;
+            btnIniciar.Location = new Point(184, 220);
             btnIniciar.Margin = new Padding(3, 16, 3, 3);
             btnIniciar.Name = "btnIniciar";
-            btnIniciar.Size = new Size(180, 44);
+            btnIniciar.Size = new Size(152, 33);
             btnIniciar.TabIndex = 4;
             btnIniciar.Text = "Iniciar";
             btnIniciar.UseVisualStyleBackColor = false;

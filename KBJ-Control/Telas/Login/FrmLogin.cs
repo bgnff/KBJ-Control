@@ -21,5 +21,20 @@ namespace KBJK_Control
         {
 
         }
+
+        private void tlpCentral_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tlpCentral_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtUser_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
