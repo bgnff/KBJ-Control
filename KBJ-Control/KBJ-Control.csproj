@@ -28,8 +28,4 @@
     </EmbeddedResource>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Telas\Principal\" />
-  </ItemGroup>
-
 </Project>
