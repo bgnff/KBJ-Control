@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             tlpDashboard = new TableLayoutPanel();
             pnlCabecalhoDashboard = new Panel();
+            btnCadastrarVisitante = new Button();
+            btnRegistrarEntrada = new Button();
             lblDescricaoDashboard = new Label();
             lblTituloDashboard = new Label();
             tlpIndicadores = new TableLayoutPanel();
@@ -54,6 +56,7 @@
             colDestino = new DataGridViewTextBoxColumn();
             colEntrada = new DataGridViewTextBoxColumn();
             colSaida = new DataGridViewTextBoxColumn();
+            colDetalhes = new DataGridViewButtonColumn();
             colSituacao = new DataGridViewTextBoxColumn();
             tlpDashboard.SuspendLayout();
             pnlCabecalhoDashboard.SuspendLayout();
@@ -88,6 +91,8 @@
             // pnlCabecalhoDashboard
             // 
             pnlCabecalhoDashboard.BackColor = Color.Transparent;
+            pnlCabecalhoDashboard.Controls.Add(btnCadastrarVisitante);
+            pnlCabecalhoDashboard.Controls.Add(btnRegistrarEntrada);
             pnlCabecalhoDashboard.Controls.Add(lblDescricaoDashboard);
             pnlCabecalhoDashboard.Controls.Add(lblTituloDashboard);
             pnlCabecalhoDashboard.Dock = DockStyle.Fill;
@@ -96,6 +101,36 @@
             pnlCabecalhoDashboard.Name = "pnlCabecalhoDashboard";
             pnlCabecalhoDashboard.Size = new Size(952, 80);
             pnlCabecalhoDashboard.TabIndex = 0;
+            // 
+            // btnCadastrarVisitante
+            // 
+            btnCadastrarVisitante.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnCadastrarVisitante.BackColor = Color.White;
+            btnCadastrarVisitante.Cursor = Cursors.Hand;
+            btnCadastrarVisitante.FlatAppearance.BorderColor = Color.FromArgb(212, 217, 223);
+            btnCadastrarVisitante.FlatStyle = FlatStyle.Flat;
+            btnCadastrarVisitante.ForeColor = Color.FromArgb(48, 55, 65);
+            btnCadastrarVisitante.Location = new Point(765, 25);
+            btnCadastrarVisitante.Name = "btnCadastrarVisitante";
+            btnCadastrarVisitante.Size = new Size(160, 36);
+            btnCadastrarVisitante.TabIndex = 3;
+            btnCadastrarVisitante.Text = "Cadastrar visitante";
+            btnCadastrarVisitante.UseVisualStyleBackColor = false;
+            // 
+            // btnRegistrarEntrada
+            // 
+            btnRegistrarEntrada.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnRegistrarEntrada.BackColor = Color.FromArgb(212, 165, 30);
+            btnRegistrarEntrada.Cursor = Cursors.Hand;
+            btnRegistrarEntrada.FlatAppearance.BorderSize = 0;
+            btnRegistrarEntrada.FlatStyle = FlatStyle.Flat;
+            btnRegistrarEntrada.ForeColor = Color.Black;
+            btnRegistrarEntrada.Location = new Point(577, 25);
+            btnRegistrarEntrada.Name = "btnRegistrarEntrada";
+            btnRegistrarEntrada.Size = new Size(160, 36);
+            btnRegistrarEntrada.TabIndex = 2;
+            btnRegistrarEntrada.Text = "Registrar entrada";
+            btnRegistrarEntrada.UseVisualStyleBackColor = false;
             // 
             // lblDescricaoDashboard
             // 
@@ -110,11 +145,11 @@
             // lblTituloDashboard
             // 
             lblTituloDashboard.AutoSize = true;
-            lblTituloDashboard.Font = new Font("Segoe UI", 20F);
+            lblTituloDashboard.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTituloDashboard.ForeColor = Color.FromArgb(48, 55, 65);
             lblTituloDashboard.Location = new Point(0, 0);
             lblTituloDashboard.Name = "lblTituloDashboard";
-            lblTituloDashboard.Size = new Size(147, 37);
+            lblTituloDashboard.Size = new Size(157, 37);
             lblTituloDashboard.TabIndex = 0;
             lblTituloDashboard.Text = "Dashboard";
             // 
@@ -309,17 +344,19 @@
             dgvVisitasHoje.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvVisitasHoje.BackgroundColor = Color.White;
             dgvVisitasHoje.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(237, 240, 243);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(48, 55, 65);
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvVisitasHoje.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvVisitasHoje.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvVisitasHoje.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(237, 240, 243);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(48, 55, 65);
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvVisitasHoje.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvVisitasHoje.ColumnHeadersHeight = 40;
             dgvVisitasHoje.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvVisitasHoje.Columns.AddRange(new DataGridViewColumn[] { colVisitante, colEmpresa, colDestino, colEntrada, colSaida, colSituacao });
+            dgvVisitasHoje.Columns.AddRange(new DataGridViewColumn[] { colVisitante, colEmpresa, colDestino, colEntrada, colSaida, colDetalhes, colSituacao });
             dgvVisitasHoje.Dock = DockStyle.Fill;
             dgvVisitasHoje.EnableHeadersVisualStyles = false;
             dgvVisitasHoje.GridColor = Color.FromArgb(212, 217, 223);
@@ -338,6 +375,9 @@
             dgvVisitasHoje.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvVisitasHoje.Size = new Size(952, 449);
             dgvVisitasHoje.TabIndex = 1;
+            dgvVisitasHoje.CellContentClick += dgvVisitasHoje_CellContentClick;
+            dgvVisitasHoje.CellFormatting += dgvVisitasHoje_CellFormatting;
+            dgvVisitasHoje.Paint += PintarBordaCartao;
             // 
             // colVisitante
             // 
@@ -373,6 +413,14 @@
             colSaida.HeaderText = "Saída";
             colSaida.Name = "colSaida";
             colSaida.ReadOnly = true;
+            // 
+            // colDetalhes
+            // 
+            colDetalhes.HeaderText = "Ação";
+            colDetalhes.Name = "colDetalhes";
+            colDetalhes.ReadOnly = true;
+            colDetalhes.Text = "Ver detalhes";
+            colDetalhes.UseColumnTextForButtonValue = true;
             // 
             // colSituacao
             // 
@@ -432,11 +480,14 @@
         private TableLayoutPanel tlpVisitasDashboard;
         private Label lblTituloVisitas;
         private DataGridView dgvVisitasHoje;
+        private Button btnCadastrarVisitante;
+        private Button btnRegistrarEntrada;
         private DataGridViewTextBoxColumn colVisitante;
         private DataGridViewTextBoxColumn colEmpresa;
         private DataGridViewTextBoxColumn colDestino;
         private DataGridViewTextBoxColumn colEntrada;
         private DataGridViewTextBoxColumn colSaida;
+        private DataGridViewButtonColumn colDetalhes;
         private DataGridViewTextBoxColumn colSituacao;
     }
 }
