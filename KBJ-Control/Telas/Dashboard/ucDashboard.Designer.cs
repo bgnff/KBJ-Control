@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             tlpDashboard = new TableLayoutPanel();
             pnlCabecalhoDashboard = new Panel();
             btnCadastrarVisitante = new Button();
@@ -346,14 +346,14 @@
             dgvVisitasHoje.BorderStyle = BorderStyle.None;
             dgvVisitasHoje.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvVisitasHoje.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(237, 240, 243);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(48, 55, 65);
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvVisitasHoje.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(237, 240, 243);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(48, 55, 65);
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvVisitasHoje.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvVisitasHoje.ColumnHeadersHeight = 40;
             dgvVisitasHoje.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvVisitasHoje.Columns.AddRange(new DataGridViewColumn[] { colVisitante, colEmpresa, colDestino, colEntrada, colSaida, colDetalhes, colSituacao });
@@ -377,7 +377,6 @@
             dgvVisitasHoje.TabIndex = 1;
             dgvVisitasHoje.CellContentClick += dgvVisitasHoje_CellContentClick;
             dgvVisitasHoje.CellFormatting += dgvVisitasHoje_CellFormatting;
-            dgvVisitasHoje.Paint += PintarBordaCartao;
             // 
             // colVisitante
             // 

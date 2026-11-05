@@ -37,7 +37,8 @@ namespace KBJK_Control.Telas.Dashboard
 
         private void PintarBordaCartao(object sender, PaintEventArgs e)
         {
-            var painel = (Panel)sender;
+            if (sender is not Panel painel)
+                return;
 
             using (var caneta = new Pen(Color.FromArgb(212, 217, 223)))
             {

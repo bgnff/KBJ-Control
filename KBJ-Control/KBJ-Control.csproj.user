@@ -4,6 +4,9 @@
     <Compile Update="Telas\Dashboard\ucDashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Telas\Historico\ucHistorico.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Telas\Inicial\FrmBoasVindas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -14,6 +17,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Telas\Recepcao\ucRecepcao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Telas\Visitantes\ucVisitantes.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
