@@ -2,6 +2,7 @@
 using KBJK_Control.Telas.Recepcao;
 using KBJK_Control.Telas.Visitantes;
 using KBJK_Control.Telas.Historico;
+using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,26 +17,80 @@ namespace KBJK_Control.Telas.Principal
 {
     public partial class FrmPrincipal : Form
     {
+        private readonly uint _usuarioId;
+
         public FrmPrincipal()
         {
             InitializeComponent();
 
+            ConfigurarIcones();
             AbrirTela(new ucDashboard());
             SelecionarBotao(btnDashboard);
         }
 
+        public FrmPrincipal(uint usuarioId) : this()
+        {
+            _usuarioId = usuarioId;
+        }
+
         private void AbrirTela(UserControl tela)
         {
-            // Libera a tela anterior.
             while (pnlConteudo.Controls.Count > 0)
             {
-                var anterior = pnlConteudo.Controls[0];
+                Control anterior = pnlConteudo.Controls[0];
                 pnlConteudo.Controls.Remove(anterior);
                 anterior.Dispose();
             }
 
             tela.Dock = DockStyle.Fill;
             pnlConteudo.Controls.Add(tela);
+        }
+
+        private void ConfigurarIcones()
+        {
+            btnDashboard.Tag = IconChar.ChartLine;
+            btnRecepcao.Tag = IconChar.DoorOpen;
+            btnVisitantes.Tag = IconChar.Users;
+            btnHistorico.Tag = IconChar.Clock;
+            btnSair.Tag = IconChar.SignOutAlt;
+
+            Button[] botoes =
+            {
+        btnDashboard, btnRecepcao, btnVisitantes,
+        btnHistorico, btnSair
+    };
+
+            foreach (Button botao in botoes)
+            {
+                botao.ImageAlign = ContentAlignment.MiddleLeft;
+                botao.TextAlign = ContentAlignment.MiddleLeft;
+                botao.TextImageRelation = TextImageRelation.ImageBeforeText;
+                botao.Padding = new Padding(20, 0, 0, 0);
+
+                // Espaçamento entre o ícone e o texto.
+                botao.Text = "  " + botao.Text.Trim();
+
+                AtualizarIcone(botao);
+            }
+        }
+
+        private void AtualizarIcone(Button botao)
+        {
+            if (botao.Tag is not IconChar icone)
+                return;
+
+            using (var gerador = new IconButton())
+            {
+                gerador.IconChar = icone;
+                gerador.IconSize = 24;
+                gerador.IconColor = botao.ForeColor;
+
+                Image novaImagem = (Image)gerador.Image.Clone();
+                Image imagemAnterior = botao.Image;
+
+                botao.Image = novaImagem;
+                imagemAnterior?.Dispose();
+            }
         }
 
         private void SelecionarBotao(Button selecionado)
@@ -57,6 +112,7 @@ namespace KBJK_Control.Telas.Principal
                     : Color.FromArgb(37, 45, 56);
 
                 botao.ForeColor = ativo ? Color.Black : Color.White;
+                AtualizarIcone(botao);
             }
         }
 
@@ -95,7 +151,6 @@ namespace KBJK_Control.Telas.Principal
             }
             this.Close();
         }
-
 
     }
 }
