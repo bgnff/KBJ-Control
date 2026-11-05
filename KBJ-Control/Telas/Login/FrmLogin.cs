@@ -46,17 +46,16 @@ namespace KBJK_Control
             try
             {
                 UsuarioRepository repo = new UsuarioRepository();
-                bool loginSucesso = repo.AutentificarUsuario(usuario, senha);
+                bool loginSucesso = repo.AutentificarUsuario(usuario, senha, out uint usuarioId);
 
                 if (loginSucesso)
                 {
                     this.Hide();
 
-                    using (var telaPrincipal = new FrmPrincipal())
+                    using (var telaPrincipal = new FrmPrincipal(usuarioId))
                     {
                         telaPrincipal.ShowDialog();
                     }
-
                     this.Close();
                 }
                 else

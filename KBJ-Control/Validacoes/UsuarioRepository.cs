@@ -1,38 +1,43 @@
 ﻿using MySqlConnector;
 using System;
-
 public class UsuarioRepository
 {
-    public bool AutentificarUsuario(string usuarioInput, string senhaInput)
+    public bool AutentificarUsuario(
+        string usuarioInput,
+        string senhaInput,
+        out uint usuarioId)
     {
-        string query = "SELECT senha_hash FROM usuarios WHERE nome_usuario = @nome_usuario";
-        
+        usuarioId = 0;
+
+        const string query = """
+            SELECT usuario_id, senha_hash
+            FROM usuarios
+            WHERE nome_usuario = @nome_usuario
+              AND status_ativo = 'ATIVA'
+            """;
+
         using (MySqlConnection conexao = ConexaoBD.ObterConexao())
         {
-            try
+            conexao.Open();
+
+            using (MySqlCommand cmd = new MySqlCommand(query, conexao))
             {
-                conexao.Open();
-                using (MySqlCommand cmd = new MySqlCommand(query, conexao))
+                cmd.Parameters.AddWithValue("@nome_usuario", usuarioInput);
+
+                using (MySqlDataReader leitor = cmd.ExecuteReader())
                 {
-                    cmd.Parameters.AddWithValue("@nome_usuario", usuarioInput);
+                    if (!leitor.Read())
+                        return false;
 
-                    object result = cmd.ExecuteScalar();
+                    string senhaHashBanco = leitor.GetString("senha_hash");
 
-                    if (result != null)
-                    {
-                        string senhaHashBanco = result.ToString();
+                    if (!BCrypt.Net.BCrypt.Verify(senhaInput, senhaHashBanco))
+                        return false;
 
-                        bool senhaValida = BCrypt.Net.BCrypt.Verify(senhaInput, senhaHashBanco);
-
-                        return senhaValida;
-                    }
+                    usuarioId = leitor.GetUInt32("usuario_id");
+                    return true;
                 }
             }
-            catch (Exception ex)
-            {
-                throw new Exception("Erro ao consultar o Banco de Dados. " + ex.Message);
-            }
         }
-        return false;
     }
 }
