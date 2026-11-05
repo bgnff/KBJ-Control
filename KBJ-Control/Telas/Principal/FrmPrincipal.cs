@@ -1,5 +1,7 @@
 ﻿using KBJK_Control.Telas.Dashboard;
 using KBJK_Control.Telas.Recepcao;
+using KBJK_Control.Telas.Visitantes;
+using KBJK_Control.Telas.Historico;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -60,7 +62,8 @@ namespace KBJK_Control.Telas.Principal
 
         private void btnHistorico_Click(object sender, EventArgs e)
         {
-
+            AbrirTela(new ucHistorico());
+            SelecionarBotao(btnHistorico);
         }
         private void btnDashboard_Click(object sender, EventArgs e)
         {
@@ -78,7 +81,8 @@ namespace KBJK_Control.Telas.Principal
 
         private void btnVisitantes_Click(object sender, EventArgs e)
         {
-            
+            AbrirTela(new ucVisitantes());
+            SelecionarBotao(btnVisitantes);
         }
 
         private void btnSair_Click(object sender, EventArgs e)
