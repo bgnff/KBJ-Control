@@ -1,20 +1,86 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace KBJK_Control.Telas.Visitantes
 {
     public partial class ucVisitantes : UserControl
     {
+        private readonly VisitanteRepository _repository = new();
+
         public ucVisitantes()
         {
             InitializeComponent();
+
+            ConfigurarTabela();
+
+            Load += ucVisitantes_Load;
+            btnPesquisarVisitantes.Click += btnPesquisarVisitantes_Click;
+            txtPesquisaVisitantes.KeyDown += txtPesquisaVisitantes_KeyDown;
+        }
+
+        private void ConfigurarTabela()
+        {
+            // Usa somente as colunas que você criou no Designer.
+            dgvVisitantes.AutoGenerateColumns = false;
+
+            dgvVisitantes.Columns["colNome"].DataPropertyName =
+                "nome_completo";
+
+            dgvVisitantes.Columns["colDocumento"].DataPropertyName =
+                "documento";
+
+            dgvVisitantes.Columns["colEmpresa"].DataPropertyName =
+                "empresa_origem";
+
+            dgvVisitantes.Columns["colEmpresa"].HeaderText =
+                "Empresa da última visita";
+
+            dgvVisitantes.Columns["colEmpresa"]
+                .DefaultCellStyle.NullValue = "—";
+        }
+
+        private void ucVisitantes_Load(object sender, EventArgs e)
+        {
+            CarregarVisitantes();
+        }
+
+        private void CarregarVisitantes()
+        {
+            try
+            {
+                var tabela = _repository.Listar(
+                    txtPesquisaVisitantes.Text);
+
+                dgvVisitantes.DataSource = tabela;
+
+                lblTotalVisitantes.Text =
+                    $"Visitantes encontrados: {tabela.Rows.Count}";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Não foi possível carregar os visitantes.\n\n"
+                    + ex.Message,
+                    "Erro",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnPesquisarVisitantes_Click(
+            object sender, EventArgs e)
+        {
+            CarregarVisitantes();
+        }
+
+        private void txtPesquisaVisitantes_KeyDown(
+            object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                CarregarVisitantes();
+            }
         }
     }
 }
