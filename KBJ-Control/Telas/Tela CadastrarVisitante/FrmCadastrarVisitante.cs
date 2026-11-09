@@ -16,5 +16,15 @@ namespace KBJK_Control.Telas.Dashboard
         {
             InitializeComponent();
         }
+
+        private void lblNomeCadastro1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTitulo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
