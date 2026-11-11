@@ -33,6 +33,8 @@ namespace KBJK_Control.Telas.Inicial
             lblBoasVindas = new Label();
             lblInstrucao = new Label();
             btnIniciar = new Button();
+            tlpImagemInicial = new TableLayoutPanel();
+            pictureBox1 = new PictureBox();
             pnlBarraStatus = new Panel();
             lblStatusContexto = new Label();
             lblStatusAmbiente = new Label();
@@ -45,6 +47,8 @@ namespace KBJK_Control.Telas.Inicial
             tlpConteudoCentral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picLogo).BeginInit();
             flpNomeApp.SuspendLayout();
+            tlpImagemInicial.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnlBarraStatus.SuspendLayout();
             SuspendLayout();
             // 
@@ -195,24 +199,23 @@ namespace KBJK_Control.Telas.Inicial
             // tlpAreaBoasVindas
             // 
             tlpAreaBoasVindas.BackColor = Color.FromArgb(20, 34, 55);
-            tlpAreaBoasVindas.ColumnCount = 3;
-            tlpAreaBoasVindas.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tlpAreaBoasVindas.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 650F));
-            tlpAreaBoasVindas.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tlpAreaBoasVindas.Controls.Add(tlpConteudoCentral, 1, 1);
+            tlpAreaBoasVindas.ColumnCount = 2;
+            tlpAreaBoasVindas.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 46F));
+            tlpAreaBoasVindas.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 54F));
+            tlpAreaBoasVindas.Controls.Add(tlpConteudoCentral, 1, 0);
+            tlpAreaBoasVindas.Controls.Add(tlpImagemInicial, 0, 0);
             tlpAreaBoasVindas.Dock = DockStyle.Fill;
             tlpAreaBoasVindas.Location = new Point(0, 45);
             tlpAreaBoasVindas.Margin = new Padding(0);
             tlpAreaBoasVindas.Name = "tlpAreaBoasVindas";
-            tlpAreaBoasVindas.RowCount = 3;
-            tlpAreaBoasVindas.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tlpAreaBoasVindas.RowStyles.Add(new RowStyle(SizeType.Absolute, 355F));
-            tlpAreaBoasVindas.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tlpAreaBoasVindas.RowCount = 1;
+            tlpAreaBoasVindas.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tlpAreaBoasVindas.Size = new Size(1708, 880);
             tlpAreaBoasVindas.TabIndex = 1;
             // 
             // tlpConteudoCentral
             // 
+            tlpConteudoCentral.Anchor = AnchorStyles.Left;
             tlpConteudoCentral.ColumnCount = 1;
             tlpConteudoCentral.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tlpConteudoCentral.Controls.Add(picLogo, 0, 0);
@@ -220,24 +223,23 @@ namespace KBJK_Control.Telas.Inicial
             tlpConteudoCentral.Controls.Add(lblBoasVindas, 0, 3);
             tlpConteudoCentral.Controls.Add(lblInstrucao, 0, 4);
             tlpConteudoCentral.Controls.Add(btnIniciar, 0, 6);
-            tlpConteudoCentral.Dock = DockStyle.Fill;
-            tlpConteudoCentral.Location = new Point(529, 262);
-            tlpConteudoCentral.Margin = new Padding(0);
+            tlpConteudoCentral.Location = new Point(829, 262);
+            tlpConteudoCentral.Margin = new Padding(44, 0, 72, 0);
             tlpConteudoCentral.Name = "tlpConteudoCentral";
             tlpConteudoCentral.RowCount = 7;
             tlpConteudoCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 98F));
             tlpConteudoCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 54F));
-            tlpConteudoCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
-            tlpConteudoCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
-            tlpConteudoCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 32F));
-            tlpConteudoCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
+            tlpConteudoCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 9F));
+            tlpConteudoCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 52F));
+            tlpConteudoCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 79F));
+            tlpConteudoCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 8F));
             tlpConteudoCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 55F));
             tlpConteudoCentral.Size = new Size(650, 355);
-            tlpConteudoCentral.TabIndex = 0;
+            tlpConteudoCentral.TabIndex = 1;
             // 
             // picLogo
             // 
-            picLogo.Anchor = AnchorStyles.None;
+            picLogo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             picLogo.Image = (Image)resources.GetObject("picLogo.Image");
             picLogo.Location = new Point(227, 0);
             picLogo.Margin = new Padding(0);
@@ -249,7 +251,7 @@ namespace KBJK_Control.Telas.Inicial
             // 
             // flpNomeApp
             // 
-            flpNomeApp.Anchor = AnchorStyles.None;
+            flpNomeApp.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             flpNomeApp.AutoSize = true;
             flpNomeApp.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             flpNomeApp.Controls.Add(lblMarcaKbj);
@@ -263,6 +265,7 @@ namespace KBJK_Control.Telas.Inicial
             // 
             // lblMarcaKbj
             // 
+            lblMarcaKbj.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             lblMarcaKbj.AutoSize = true;
             lblMarcaKbj.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
             lblMarcaKbj.ForeColor = Color.White;
@@ -272,9 +275,11 @@ namespace KBJK_Control.Telas.Inicial
             lblMarcaKbj.Size = new Size(79, 46);
             lblMarcaKbj.TabIndex = 0;
             lblMarcaKbj.Text = "KBJ";
+            lblMarcaKbj.TextAlign = ContentAlignment.TopCenter;
             // 
             // lblMarcaControl
             // 
+            lblMarcaControl.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             lblMarcaControl.AutoSize = true;
             lblMarcaControl.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
             lblMarcaControl.ForeColor = Color.White;
@@ -284,38 +289,38 @@ namespace KBJK_Control.Telas.Inicial
             lblMarcaControl.Size = new Size(141, 46);
             lblMarcaControl.TabIndex = 1;
             lblMarcaControl.Text = "Control";
+            lblMarcaControl.TextAlign = ContentAlignment.MiddleRight;
             // 
             // lblBoasVindas
             // 
-            lblBoasVindas.Anchor = AnchorStyles.None;
+            lblBoasVindas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             lblBoasVindas.AutoSize = true;
             lblBoasVindas.Font = new Font("Segoe UI Semibold", 15F, FontStyle.Bold);
             lblBoasVindas.ForeColor = Color.White;
-            lblBoasVindas.Location = new Point(167, 194);
+            lblBoasVindas.Location = new Point(48, 161);
             lblBoasVindas.Margin = new Padding(0);
             lblBoasVindas.Name = "lblBoasVindas";
-            lblBoasVindas.Size = new Size(315, 35);
+            lblBoasVindas.Size = new Size(553, 52);
             lblBoasVindas.TabIndex = 2;
-            lblBoasVindas.Text = "Bem-vindo ao KBJ Control";
+            lblBoasVindas.Text = "Controle de acessos com agilidade e segurança";
             lblBoasVindas.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblInstrucao
             // 
-            lblInstrucao.Anchor = AnchorStyles.None;
-            lblInstrucao.AutoSize = true;
+            lblInstrucao.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             lblInstrucao.Font = new Font("Segoe UI", 10F);
             lblInstrucao.ForeColor = Color.FromArgb(180, 193, 210);
-            lblInstrucao.Location = new Point(146, 236);
+            lblInstrucao.Location = new Point(37, 213);
             lblInstrucao.Margin = new Padding(0);
             lblInstrucao.Name = "lblInstrucao";
-            lblInstrucao.Size = new Size(358, 23);
+            lblInstrucao.Size = new Size(576, 79);
             lblInstrucao.TabIndex = 3;
-            lblInstrucao.Text = "Registre e consulte visitas, da entrada à saída.";
+            lblInstrucao.Text = "Organize entradas, acompanhe visitas e \r\nconsulte informações sempre que precisar.";
             lblInstrucao.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnIniciar
             // 
-            btnIniciar.Anchor = AnchorStyles.None;
+            btnIniciar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             btnIniciar.BackColor = Color.FromArgb(232, 185, 63);
             btnIniciar.Cursor = Cursors.Hand;
             btnIniciar.FlatAppearance.BorderSize = 0;
@@ -324,14 +329,41 @@ namespace KBJK_Control.Telas.Inicial
             btnIniciar.FlatStyle = FlatStyle.Flat;
             btnIniciar.Font = new Font("Segoe UI Semibold", 9.5F, FontStyle.Bold);
             btnIniciar.ForeColor = Color.FromArgb(48, 55, 65);
-            btnIniciar.Location = new Point(175, 300);
+            btnIniciar.Location = new Point(197, 300);
             btnIniciar.Margin = new Padding(0);
             btnIniciar.Name = "btnIniciar";
-            btnIniciar.Size = new Size(300, 55);
+            btnIniciar.Size = new Size(255, 55);
             btnIniciar.TabIndex = 0;
-            btnIniciar.Text = "Iniciar";
+            btnIniciar.Text = "Começar agora";
             btnIniciar.UseVisualStyleBackColor = false;
             btnIniciar.Click += btnIniciar_Click;
+            // 
+            // tlpImagemInicial
+            // 
+            tlpImagemInicial.ColumnCount = 1;
+            tlpImagemInicial.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tlpImagemInicial.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tlpImagemInicial.Controls.Add(pictureBox1, 0, 0);
+            tlpImagemInicial.Dock = DockStyle.Fill;
+            tlpImagemInicial.Location = new Point(0, 0);
+            tlpImagemInicial.Margin = new Padding(0);
+            tlpImagemInicial.Name = "tlpImagemInicial";
+            tlpImagemInicial.RowCount = 1;
+            tlpImagemInicial.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tlpImagemInicial.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tlpImagemInicial.Size = new Size(785, 880);
+            tlpImagemInicial.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(779, 874);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // pnlBarraStatus
             // 
@@ -367,13 +399,13 @@ namespace KBJK_Control.Telas.Inicial
             lblStatusAmbiente.Dock = DockStyle.Right;
             lblStatusAmbiente.Font = new Font("Segoe UI", 8F);
             lblStatusAmbiente.ForeColor = Color.FromArgb(101, 112, 124);
-            lblStatusAmbiente.Location = new Point(1411, 0);
+            lblStatusAmbiente.Location = new Point(1688, 0);
             lblStatusAmbiente.Margin = new Padding(4, 0, 4, 0);
             lblStatusAmbiente.Name = "lblStatusAmbiente";
             lblStatusAmbiente.Padding = new Padding(0, 6, 0, 0);
-            lblStatusAmbiente.Size = new Size(277, 25);
+            lblStatusAmbiente.Size = new Size(0, 25);
             lblStatusAmbiente.TabIndex = 1;
-            lblStatusAmbiente.Text = "Ambiente de demonstração • dados fictícios";
+            lblStatusAmbiente.Visible = false;
             // 
             // FrmBoasVindas
             // 
@@ -405,6 +437,8 @@ namespace KBJK_Control.Telas.Inicial
             ((System.ComponentModel.ISupportInitialize)picLogo).EndInit();
             flpNomeApp.ResumeLayout(false);
             flpNomeApp.PerformLayout();
+            tlpImagemInicial.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             pnlBarraStatus.ResumeLayout(false);
             pnlBarraStatus.PerformLayout();
             ResumeLayout(false);
@@ -433,5 +467,7 @@ namespace KBJK_Control.Telas.Inicial
         private Panel pnlBarraStatus;
         private Label lblStatusContexto;
         private Label lblStatusAmbiente;
+        private TableLayoutPanel tlpImagemInicial;
+        private PictureBox pictureBox1;
     }
 }

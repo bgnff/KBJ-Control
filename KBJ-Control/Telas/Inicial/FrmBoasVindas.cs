@@ -108,5 +108,10 @@ namespace KBJK_Control.Telas.Inicial
             using var caneta = new Pen(Color.FromArgb(212, 217, 223));
             e.Graphics.DrawLine(caneta, 0, 0, pnlBarraStatus.ClientSize.Width, 0);
         }
+
+        private void lblInstrucao_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
