@@ -28,8 +28,5 @@
     <Compile Update="Telas\Tela RegistrarEntrada\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Telas\Visitantes\UserControl1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
   </ItemGroup>
 </Project>
