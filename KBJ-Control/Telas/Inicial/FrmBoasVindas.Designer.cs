@@ -384,7 +384,7 @@ namespace KBJK_Control.Telas.Inicial
             Controls.Add(tlpEstrutura);
             FormBorderStyle = FormBorderStyle.None;
             KeyPreview = true;
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             MinimumSize = new Size(1200, 750);
             Name = "FrmBoasVindas";
             StartPosition = FormStartPosition.CenterScreen;
