@@ -100,5 +100,10 @@ namespace KBJK_Control
         private void lblUser_Click(object sender, EventArgs e)
         {
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

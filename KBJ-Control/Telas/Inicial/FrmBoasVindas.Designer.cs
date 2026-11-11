@@ -55,10 +55,10 @@
             tlpEstrutura.Margin = new Padding(0);
             tlpEstrutura.Name = "tlpEstrutura";
             tlpEstrutura.RowCount = 2;
-            tlpEstrutura.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
+            tlpEstrutura.RowStyles.Add(new RowStyle(SizeType.Absolute, 48F));
             tlpEstrutura.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlpEstrutura.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tlpEstrutura.Size = new Size(984, 611);
+            tlpEstrutura.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
+            tlpEstrutura.Size = new Size(1125, 815);
             tlpEstrutura.TabIndex = 0;
             // 
             // pnlCabecalho
@@ -68,7 +68,7 @@
             pnlCabecalho.Location = new Point(0, 0);
             pnlCabecalho.Margin = new Padding(0);
             pnlCabecalho.Name = "pnlCabecalho";
-            pnlCabecalho.Size = new Size(984, 36);
+            pnlCabecalho.Size = new Size(1125, 48);
             pnlCabecalho.TabIndex = 0;
             // 
             // tlpCentral
@@ -76,18 +76,18 @@
             tlpCentral.BackColor = Color.FromArgb(244, 245, 247);
             tlpCentral.ColumnCount = 3;
             tlpCentral.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tlpCentral.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 520F));
+            tlpCentral.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 594F));
             tlpCentral.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tlpCentral.Controls.Add(tlpBoasVindas, 1, 1);
             tlpCentral.Dock = DockStyle.Fill;
-            tlpCentral.Location = new Point(0, 36);
+            tlpCentral.Location = new Point(0, 48);
             tlpCentral.Margin = new Padding(0);
             tlpCentral.Name = "tlpCentral";
             tlpCentral.RowCount = 3;
             tlpCentral.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 295F));
+            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 393F));
             tlpCentral.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tlpCentral.Size = new Size(984, 575);
+            tlpCentral.Size = new Size(1125, 767);
             tlpCentral.TabIndex = 1;
             // 
             // tlpBoasVindas
@@ -96,29 +96,30 @@
             tlpBoasVindas.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tlpBoasVindas.Controls.Add(picLogo, 0, 0);
             tlpBoasVindas.Controls.Add(lblNomeApp, 0, 1);
-            tlpBoasVindas.Controls.Add(lblBoasVindas, 0, 2);
-            tlpBoasVindas.Controls.Add(lblIntrucao, 0, 3);
             tlpBoasVindas.Controls.Add(btnIniciar, 0, 4);
+            tlpBoasVindas.Controls.Add(lblIntrucao, 0, 3);
+            tlpBoasVindas.Controls.Add(lblBoasVindas, 0, 2);
             tlpBoasVindas.Dock = DockStyle.Fill;
-            tlpBoasVindas.Location = new Point(232, 140);
+            tlpBoasVindas.Location = new Point(265, 187);
             tlpBoasVindas.Margin = new Padding(0);
             tlpBoasVindas.Name = "tlpBoasVindas";
             tlpBoasVindas.RowCount = 5;
-            tlpBoasVindas.RowStyles.Add(new RowStyle(SizeType.Absolute, 90F));
-            tlpBoasVindas.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tlpBoasVindas.RowStyles.Add(new RowStyle(SizeType.Absolute, 120F));
+            tlpBoasVindas.RowStyles.Add(new RowStyle(SizeType.Absolute, 53F));
             tlpBoasVindas.RowStyles.Add(new RowStyle());
             tlpBoasVindas.RowStyles.Add(new RowStyle());
             tlpBoasVindas.RowStyles.Add(new RowStyle());
-            tlpBoasVindas.Size = new Size(520, 295);
+            tlpBoasVindas.Size = new Size(594, 393);
             tlpBoasVindas.TabIndex = 0;
             // 
             // picLogo
             // 
             picLogo.Anchor = AnchorStyles.None;
             picLogo.Image = (Image)resources.GetObject("picLogo.Image");
-            picLogo.Location = new Point(182, 6);
+            picLogo.Location = new Point(208, 8);
+            picLogo.Margin = new Padding(3, 4, 3, 4);
             picLogo.Name = "picLogo";
-            picLogo.Size = new Size(156, 78);
+            picLogo.Size = new Size(178, 104);
             picLogo.SizeMode = PictureBoxSizeMode.Zoom;
             picLogo.TabIndex = 0;
             picLogo.TabStop = false;
@@ -128,9 +129,9 @@
             lblNomeApp.Anchor = AnchorStyles.None;
             lblNomeApp.AutoSize = true;
             lblNomeApp.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblNomeApp.Location = new Point(176, 91);
+            lblNomeApp.Location = new Point(192, 123);
             lblNomeApp.Name = "lblNomeApp";
-            lblNomeApp.Size = new Size(168, 37);
+            lblNomeApp.Size = new Size(209, 46);
             lblNomeApp.TabIndex = 1;
             lblNomeApp.Text = "KBJ Control";
             lblNomeApp.TextAlign = ContentAlignment.MiddleCenter;
@@ -140,10 +141,10 @@
             lblBoasVindas.Anchor = AnchorStyles.None;
             lblBoasVindas.AutoSize = true;
             lblBoasVindas.Font = new Font("Segoe UI Semibold", 13.25F, FontStyle.Bold);
-            lblBoasVindas.Location = new Point(142, 142);
-            lblBoasVindas.Margin = new Padding(3, 12, 3, 0);
+            lblBoasVindas.Location = new Point(150, 189);
+            lblBoasVindas.Margin = new Padding(3, 16, 3, 0);
             lblBoasVindas.Name = "lblBoasVindas";
-            lblBoasVindas.Size = new Size(235, 25);
+            lblBoasVindas.Size = new Size(294, 31);
             lblBoasVindas.TabIndex = 2;
             lblBoasVindas.Text = "Bem-vindo ao KBJ Control!";
             // 
@@ -152,26 +153,26 @@
             lblIntrucao.Anchor = AnchorStyles.None;
             lblIntrucao.AutoSize = true;
             lblIntrucao.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblIntrucao.Location = new Point(133, 187);
-            lblIntrucao.Margin = new Padding(3, 20, 3, 0);
+            lblIntrucao.Location = new Point(129, 247);
+            lblIntrucao.Margin = new Padding(3, 27, 3, 0);
             lblIntrucao.Name = "lblIntrucao";
-            lblIntrucao.Size = new Size(253, 17);
+            lblIntrucao.Size = new Size(336, 23);
             lblIntrucao.TabIndex = 3;
             lblIntrucao.Text = "Controle seus acessos, da entrada à saída.";
             // 
             // btnIniciar
             // 
-            btnIniciar.Anchor = AnchorStyles.Top;
+            btnIniciar.Anchor = AnchorStyles.None;
             btnIniciar.BackColor = Color.FromArgb(212, 165, 30);
             btnIniciar.Cursor = Cursors.Hand;
             btnIniciar.FlatAppearance.BorderSize = 0;
             btnIniciar.FlatStyle = FlatStyle.Flat;
             btnIniciar.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnIniciar.ForeColor = Color.Black;
-            btnIniciar.Location = new Point(184, 220);
-            btnIniciar.Margin = new Padding(3, 16, 3, 3);
+            btnIniciar.Location = new Point(210, 318);
+            btnIniciar.Margin = new Padding(3, 21, 3, 4);
             btnIniciar.Name = "btnIniciar";
-            btnIniciar.Size = new Size(152, 33);
+            btnIniciar.Size = new Size(174, 44);
             btnIniciar.TabIndex = 4;
             btnIniciar.Text = "Iniciar";
             btnIniciar.UseVisualStyleBackColor = false;
@@ -179,10 +180,11 @@
             // 
             // FrmBoasVindas
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(984, 611);
+            ClientSize = new Size(1125, 815);
             Controls.Add(tlpEstrutura);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FrmBoasVindas";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "KBJ Control";
