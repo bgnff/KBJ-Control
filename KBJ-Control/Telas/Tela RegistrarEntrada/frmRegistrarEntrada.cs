@@ -15,6 +15,12 @@ namespace KBJK_Control.Telas.Tela_RegistrarEntrada
         public frmRegistrarEntrada()
         {
             InitializeComponent();
+            btnCancelar.Click += (_, _) => Close();
+            btnCadastrarNVisitante.Click += (_, _) =>
+            {
+                using var cadastro = new KBJK_Control.Telas.Dashboard.FrmCadastrarVisitante();
+                cadastro.ShowDialog(this);
+            };
         }
 
         private void label1_Click(object sender, EventArgs e)
