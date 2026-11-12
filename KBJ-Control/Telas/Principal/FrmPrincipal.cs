@@ -19,19 +19,18 @@ namespace KBJK_Control.Telas.Principal
     {
         private readonly uint _usuarioId;
 
-        public FrmPrincipal()
+        public FrmPrincipal() : this(0)
         {
+        }
+
+        public FrmPrincipal(uint usuarioId)
+        {
+            _usuarioId = usuarioId;
             InitializeComponent();
 
             ConfigurarIcones();
-            AbrirTela(new ucDashboard());
-            SelecionarBotao(btnDashboard);
-        }
-
-        public FrmPrincipal(uint usuarioId) : this()
-        {
-            _usuarioId = usuarioId;
             AbrirTela(new ucDashboard(usuarioId));
+            SelecionarBotao(btnDashboard);
         }
 
         private void AbrirTela(UserControl tela)
