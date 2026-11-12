@@ -33,7 +33,7 @@
             tlpLogo = new TableLayoutPanel();
             lblLogo = new Label();
             picLogo = new PictureBox();
-            pnlCentral = new AntdUI.Panel();
+            pnlCentral = new Panel();
             tlpCentral = new TableLayoutPanel();
             lblEsqueciSenha = new Label();
             txtSenha = new TextBox();
@@ -56,18 +56,20 @@
             tlpLogin.BackColor = Color.FromArgb(20, 34, 55);
             tlpLogin.ColumnCount = 3;
             tlpLogin.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tlpLogin.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 420F));
+            tlpLogin.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 480F));
             tlpLogin.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tlpLogin.Controls.Add(tlpLogo, 1, 0);
-            tlpLogin.Controls.Add(pnlCentral, 1, 1);
+            tlpLogin.Controls.Add(tlpLogo, 1, 1);
+            tlpLogin.Controls.Add(pnlCentral, 1, 3);
             tlpLogin.Dock = DockStyle.Fill;
             tlpLogin.Location = new Point(0, 0);
             tlpLogin.Margin = new Padding(0);
             tlpLogin.Name = "tlpLogin";
-            tlpLogin.RowCount = 3;
-            tlpLogin.RowStyles.Add(new RowStyle(SizeType.Percent, 26F));
-            tlpLogin.RowStyles.Add(new RowStyle(SizeType.Absolute, 360F));
-            tlpLogin.RowStyles.Add(new RowStyle(SizeType.Percent, 74F));
+            tlpLogin.RowCount = 5;
+            tlpLogin.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tlpLogin.RowStyles.Add(new RowStyle(SizeType.Absolute, 48F));
+            tlpLogin.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tlpLogin.RowStyles.Add(new RowStyle(SizeType.Absolute, 420F));
+            tlpLogin.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tlpLogin.Size = new Size(914, 600);
             tlpLogin.TabIndex = 0;
             // 
@@ -75,7 +77,7 @@
             // 
             tlpLogo.BackColor = Color.Transparent;
             tlpLogo.ColumnCount = 2;
-            tlpLogo.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 46F));
+            tlpLogo.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 68F));
             tlpLogo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tlpLogo.Controls.Add(lblLogo, 1, 0);
             tlpLogo.Controls.Add(picLogo, 0, 0);
@@ -83,7 +85,7 @@
             tlpLogo.Location = new Point(247, 0);
             tlpLogo.Margin = new Padding(0);
             tlpLogo.Name = "tlpLogo";
-            tlpLogo.Padding = new Padding(108, 0, 0, 0);
+            tlpLogo.Padding = new Padding(124, 0, 0, 0);
             tlpLogo.RowCount = 1;
             tlpLogo.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tlpLogo.Size = new Size(420, 62);
@@ -109,7 +111,7 @@
             picLogo.Location = new Point(112, 12);
             picLogo.Margin = new Padding(0);
             picLogo.Name = "picLogo";
-            picLogo.Size = new Size(38, 38);
+            picLogo.Size = new Size(60, 30);
             picLogo.SizeMode = PictureBoxSizeMode.Zoom;
             picLogo.TabIndex = 0;
             picLogo.TabStop = false;
@@ -118,15 +120,13 @@
             // 
             pnlCentral.Anchor = AnchorStyles.None;
             pnlCentral.BackColor = Color.White;
-            pnlCentral.BorderColor = Color.FromArgb(232, 185, 63);
-            pnlCentral.BorderWidth = 1F;
+            pnlCentral.BorderStyle = BorderStyle.FixedSingle;
             pnlCentral.Controls.Add(tlpCentral);
             pnlCentral.Location = new Point(247, 62);
             pnlCentral.Margin = new Padding(0);
             pnlCentral.Name = "pnlCentral";
-            pnlCentral.Size = new Size(420, 360);
+            pnlCentral.Size = new Size(480, 420);
             pnlCentral.TabIndex = 2;
-            pnlCentral.Text = "panel1";
             // 
             // tlpCentral
             // 
@@ -147,18 +147,18 @@
             tlpCentral.Location = new Point(2, 2);
             tlpCentral.Margin = new Padding(0);
             tlpCentral.Name = "tlpCentral";
-            tlpCentral.Padding = new Padding(22, 18, 22, 16);
+            tlpCentral.Padding = new Padding(32, 26, 32, 24);
             tlpCentral.RowCount = 10;
-            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 6F));
-            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
-            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
-            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 6F));
-            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 34F));
+            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 0F));
+            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 48F));
+            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 24F));
+            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 48F));
+            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 26F));
+            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 48F));
+            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 8F));
             tlpCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 42F));
-            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 28F));
+            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 54F));
+            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tlpCentral.Size = new Size(416, 356);
             tlpCentral.TabIndex = 1;
             tlpCentral.Paint += tlpCentral_Paint_1;
@@ -168,7 +168,8 @@
             lblEsqueciSenha.Anchor = AnchorStyles.Right;
             lblEsqueciSenha.AutoSize = true;
             lblEsqueciSenha.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            lblEsqueciSenha.ForeColor = Color.FromArgb(186, 132, 12);
+            lblEsqueciSenha.ForeColor = Color.FromArgb(133, 96, 11);
+            lblEsqueciSenha.Cursor = Cursors.Hand;
             lblEsqueciSenha.Location = new Point(248, 209);
             lblEsqueciSenha.Margin = new Padding(0);
             lblEsqueciSenha.Name = "lblEsqueciSenha";
@@ -260,7 +261,7 @@
             btnMostrarSenha.Location = new Point(22, 205);
             btnMostrarSenha.Margin = new Padding(0);
             btnMostrarSenha.Name = "btnMostrarSenha";
-            btnMostrarSenha.Size = new Size(104, 27);
+            btnMostrarSenha.Size = new Size(136, 36);
             btnMostrarSenha.TabIndex = 5;
             btnMostrarSenha.Text = "Mostrar senha";
             btnMostrarSenha.UseVisualStyleBackColor = false;
@@ -268,7 +269,7 @@
             //
             // btnEntrar
             // 
-            btnEntrar.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            btnEntrar.Dock = DockStyle.Fill;
             btnEntrar.BackColor = Color.FromArgb(232, 185, 63);
             btnEntrar.BackgroundImageLayout = ImageLayout.None;
             tlpCentral.SetColumnSpan(btnEntrar, 2);
@@ -302,8 +303,10 @@
             // 
             // frmLogin
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
+            MinimumSize = new Size(640, 620);
+            AcceptButton = btnEntrar;
             BackColor = Color.FromArgb(20, 34, 55);
             ClientSize = new Size(914, 600);
             Controls.Add(tlpLogin);
@@ -328,7 +331,7 @@
         private TableLayoutPanel tlpLogo;
         private PictureBox picLogo;
         private Label lblLogo;
-        private AntdUI.Panel pnlCentral;
+        private Panel pnlCentral;
         private TableLayoutPanel tlpCentral;
         private Label lblPreencha;
         private Label lblUser;
