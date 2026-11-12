@@ -1,4 +1,4 @@
-﻿using KBJK_Control.Telas.Dashboard;
+using KBJK_Control.Telas.Dashboard;
 using KBJK_Control.Telas.Recepcao;
 using KBJK_Control.Telas.Visitantes;
 using KBJK_Control.Telas.Historico;
@@ -132,7 +132,7 @@ namespace KBJK_Control.Telas.Principal
 
         private void btnRecepcao_Click(object sender, EventArgs e)
         {
-            AbrirTela(new ucRecepcao());
+            AbrirTela(new ucRecepcao(_usuarioId));
             SelecionarBotao(btnRecepcao);
         }
 
@@ -155,3 +155,4 @@ namespace KBJK_Control.Telas.Principal
 
     }
 }
+

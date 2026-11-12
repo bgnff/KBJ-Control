@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,8 +20,10 @@ namespace KBJK_Control.Telas.Tela_RegistrarEntrada
             dgvVisitantes.MultiSelect = false;
             dgvVisitantes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvVisitantes.AllowUserToAddRows = false;
+            txtPessoaSetorVisitado.MaxLength = 150;
+            txtMotivo.MaxLength = 255;
             dgvVisitantes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            Load += (_, _) => CarregarVisitantes();
+            Load += (_, _) => { if (System.ComponentModel.LicenseManager.UsageMode != System.ComponentModel.LicenseUsageMode.Designtime) CarregarVisitantes(); };
             btnConfirmarEntrada.Click += ConfirmarEntrada;
             btnCancelar.Click += (_, _) => Close();
             btnCadastrarNVisitante.Click += (_, _) =>
