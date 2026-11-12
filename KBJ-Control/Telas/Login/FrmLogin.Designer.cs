@@ -41,6 +41,7 @@
             txtUser = new TextBox();
             lblUser = new Label();
             lblPreencha = new Label();
+            btnMostrarSenha = new Button();
             btnEntrar = new Button();
             lbl = new Label();
             tlpLogin.SuspendLayout();
@@ -49,42 +50,43 @@
             pnlCentral.SuspendLayout();
             tlpCentral.SuspendLayout();
             SuspendLayout();
-            // 
+            //
             // tlpLogin
-            // 
-            tlpLogin.Anchor = AnchorStyles.None;
+            //
+            tlpLogin.BackColor = Color.FromArgb(20, 34, 55);
             tlpLogin.ColumnCount = 3;
-            tlpLogin.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 34.1463432F));
-            tlpLogin.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 65.85366F));
-            tlpLogin.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 222F));
+            tlpLogin.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tlpLogin.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 420F));
+            tlpLogin.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tlpLogin.Controls.Add(tlpLogo, 1, 0);
             tlpLogin.Controls.Add(pnlCentral, 1, 1);
+            tlpLogin.Dock = DockStyle.Fill;
             tlpLogin.Location = new Point(0, 0);
             tlpLogin.Margin = new Padding(0);
             tlpLogin.Name = "tlpLogin";
             tlpLogin.RowCount = 3;
-            tlpLogin.RowStyles.Add(new RowStyle(SizeType.Percent, 25.454546F));
-            tlpLogin.RowStyles.Add(new RowStyle(SizeType.Percent, 74.5454559F));
-            tlpLogin.RowStyles.Add(new RowStyle(SizeType.Absolute, 85F));
+            tlpLogin.RowStyles.Add(new RowStyle(SizeType.Percent, 26F));
+            tlpLogin.RowStyles.Add(new RowStyle(SizeType.Absolute, 360F));
+            tlpLogin.RowStyles.Add(new RowStyle(SizeType.Percent, 74F));
             tlpLogin.Size = new Size(914, 600);
             tlpLogin.TabIndex = 0;
             // 
             // tlpLogo
             // 
-            tlpLogo.ColumnCount = 3;
-            tlpLogo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
-            tlpLogo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70F));
-            tlpLogo.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 270F));
-            tlpLogo.Controls.Add(lblLogo, 2, 1);
-            tlpLogo.Controls.Add(picLogo, 1, 1);
+            tlpLogo.BackColor = Color.Transparent;
+            tlpLogo.ColumnCount = 2;
+            tlpLogo.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 46F));
+            tlpLogo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpLogo.Controls.Add(lblLogo, 1, 0);
+            tlpLogo.Controls.Add(picLogo, 0, 0);
             tlpLogo.Dock = DockStyle.Fill;
-            tlpLogo.Location = new Point(239, 4);
-            tlpLogo.Margin = new Padding(3, 4, 3, 4);
+            tlpLogo.Location = new Point(247, 0);
+            tlpLogo.Margin = new Padding(0);
             tlpLogo.Name = "tlpLogo";
-            tlpLogo.RowCount = 2;
-            tlpLogo.RowStyles.Add(new RowStyle(SizeType.Percent, 7.54716969F));
-            tlpLogo.RowStyles.Add(new RowStyle(SizeType.Percent, 92.45283F));
-            tlpLogo.Size = new Size(449, 123);
+            tlpLogo.Padding = new Padding(108, 0, 0, 0);
+            tlpLogo.RowCount = 1;
+            tlpLogo.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpLogo.Size = new Size(420, 62);
             tlpLogo.TabIndex = 1;
             tlpLogo.Paint += tableLayoutPanel1_Paint;
             // 
@@ -92,77 +94,83 @@
             // 
             lblLogo.Anchor = AnchorStyles.Left;
             lblLogo.AutoSize = true;
-            lblLogo.Font = new Font("Segoe UI", 24.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblLogo.Location = new Point(181, 37);
+            lblLogo.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblLogo.ForeColor = Color.White;
+            lblLogo.Location = new Point(157, 12);
             lblLogo.Name = "lblLogo";
-            lblLogo.Size = new Size(258, 57);
+            lblLogo.Size = new Size(160, 37);
             lblLogo.TabIndex = 1;
             lblLogo.Text = "KBJ Control";
             // 
             // picLogo
             // 
-            picLogo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            picLogo.Anchor = AnchorStyles.None;
             picLogo.Image = (Image)resources.GetObject("picLogo.Image");
-            picLogo.Location = new Point(58, 9);
+            picLogo.Location = new Point(112, 12);
             picLogo.Margin = new Padding(0);
             picLogo.Name = "picLogo";
-            picLogo.Size = new Size(114, 114);
+            picLogo.Size = new Size(38, 38);
             picLogo.SizeMode = PictureBoxSizeMode.Zoom;
             picLogo.TabIndex = 0;
             picLogo.TabStop = false;
             // 
             // pnlCentral
             // 
-            pnlCentral.BorderColor = Color.Gray;
+            pnlCentral.Anchor = AnchorStyles.None;
+            pnlCentral.BackColor = Color.White;
+            pnlCentral.BorderColor = Color.FromArgb(232, 185, 63);
             pnlCentral.BorderWidth = 1F;
             pnlCentral.Controls.Add(tlpCentral);
-            pnlCentral.Dock = DockStyle.Fill;
-            pnlCentral.Location = new Point(239, 135);
-            pnlCentral.Margin = new Padding(3, 4, 3, 4);
+            pnlCentral.Location = new Point(247, 62);
+            pnlCentral.Margin = new Padding(0);
             pnlCentral.Name = "pnlCentral";
-            pnlCentral.Size = new Size(449, 375);
+            pnlCentral.Size = new Size(420, 360);
             pnlCentral.TabIndex = 2;
             pnlCentral.Text = "panel1";
             // 
             // tlpCentral
             // 
             tlpCentral.BackColor = Color.Transparent;
-            tlpCentral.ColumnCount = 3;
-            tlpCentral.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 5.107527F));
-            tlpCentral.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 94.89247F));
-            tlpCentral.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 24F));
+            tlpCentral.ColumnCount = 2;
+            tlpCentral.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tlpCentral.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tlpCentral.Controls.Add(lblEsqueciSenha, 1, 7);
-            tlpCentral.Controls.Add(txtSenha, 1, 5);
-            tlpCentral.Controls.Add(lblSenha, 1, 4);
-            tlpCentral.Controls.Add(txtUser, 1, 3);
-            tlpCentral.Controls.Add(lblUser, 1, 2);
-            tlpCentral.Controls.Add(lblPreencha, 1, 1);
-            tlpCentral.Controls.Add(btnEntrar, 1, 6);
-            tlpCentral.Controls.Add(lbl, 1, 8);
+            tlpCentral.Controls.Add(txtSenha, 0, 5);
+            tlpCentral.Controls.Add(lblSenha, 0, 4);
+            tlpCentral.Controls.Add(txtUser, 0, 3);
+            tlpCentral.Controls.Add(lblUser, 0, 2);
+            tlpCentral.Controls.Add(lblPreencha, 0, 1);
+            tlpCentral.Controls.Add(btnMostrarSenha, 0, 7);
+            tlpCentral.Controls.Add(btnEntrar, 0, 8);
+            tlpCentral.Controls.Add(lbl, 0, 9);
             tlpCentral.Dock = DockStyle.Fill;
             tlpCentral.Location = new Point(2, 2);
-            tlpCentral.Margin = new Padding(3, 4, 3, 4);
+            tlpCentral.Margin = new Padding(0);
             tlpCentral.Name = "tlpCentral";
-            tlpCentral.RowCount = 9;
-            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Percent, 16.27907F));
-            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Percent, 83.72093F));
-            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 32F));
-            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 52F));
+            tlpCentral.Padding = new Padding(22, 18, 22, 16);
+            tlpCentral.RowCount = 10;
+            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 6F));
+            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
+            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
+            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
+            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 6F));
+            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 34F));
+            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 42F));
             tlpCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 28F));
-            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 55F));
-            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 48F));
-            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 43F));
-            tlpCentral.RowStyles.Add(new RowStyle(SizeType.Absolute, 24F));
-            tlpCentral.Size = new Size(445, 371);
+            tlpCentral.Size = new Size(416, 356);
             tlpCentral.TabIndex = 1;
             tlpCentral.Paint += tlpCentral_Paint_1;
             // 
             // lblEsqueciSenha
             // 
+            lblEsqueciSenha.Anchor = AnchorStyles.Right;
             lblEsqueciSenha.AutoSize = true;
             lblEsqueciSenha.Font = new Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            lblEsqueciSenha.ForeColor = Color.FromArgb(212, 165, 30);
-            lblEsqueciSenha.Location = new Point(24, 303);
+            lblEsqueciSenha.ForeColor = Color.FromArgb(186, 132, 12);
+            lblEsqueciSenha.Location = new Point(248, 209);
+            lblEsqueciSenha.Margin = new Padding(0);
             lblEsqueciSenha.Name = "lblEsqueciSenha";
             lblEsqueciSenha.Size = new Size(146, 20);
             lblEsqueciSenha.TabIndex = 5;
@@ -171,20 +179,26 @@
             // 
             // txtSenha
             // 
-            txtSenha.Location = new Point(24, 204);
-            txtSenha.Margin = new Padding(3, 4, 3, 4);
+            txtSenha.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            tlpCentral.SetColumnSpan(txtSenha, 2);
+            txtSenha.Font = new Font("Segoe UI", 10F);
+            txtSenha.Location = new Point(22, 163);
+            txtSenha.Margin = new Padding(0, 5, 0, 5);
             txtSenha.Name = "txtSenha";
             txtSenha.PlaceholderText = " Informe sua senha.";
-            txtSenha.Size = new Size(393, 27);
+            txtSenha.Size = new Size(372, 30);
             txtSenha.TabIndex = 4;
             txtSenha.UseSystemPasswordChar = true;
             txtSenha.TextChanged += txtSenha_TextChanged;
             // 
             // lblSenha
             // 
+            lblSenha.Anchor = AnchorStyles.Left;
             lblSenha.AutoSize = true;
             lblSenha.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblSenha.Location = new Point(24, 172);
+            lblSenha.ForeColor = Color.FromArgb(20, 34, 55);
+            lblSenha.Location = new Point(22, 131);
+            lblSenha.Margin = new Padding(0);
             lblSenha.Name = "lblSenha";
             lblSenha.Size = new Size(57, 23);
             lblSenha.TabIndex = 3;
@@ -193,20 +207,26 @@
             // 
             // txtUser
             // 
-            txtUser.Location = new Point(24, 124);
-            txtUser.Margin = new Padding(3, 4, 3, 4);
+            txtUser.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            tlpCentral.SetColumnSpan(txtUser, 2);
+            txtUser.Font = new Font("Segoe UI", 10F);
+            txtUser.Location = new Point(22, 95);
+            txtUser.Margin = new Padding(0, 5, 0, 5);
             txtUser.Name = "txtUser";
             txtUser.PlaceholderText = "Informe seu usuário.";
-            txtUser.Size = new Size(393, 27);
+            txtUser.Size = new Size(372, 30);
             txtUser.TabIndex = 2;
             txtUser.TextChanged += txtUser_TextChanged;
             txtUser.Enter += txtUser_Enter;
             // 
             // lblUser
             // 
+            lblUser.Anchor = AnchorStyles.Left;
             lblUser.AutoSize = true;
             lblUser.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            lblUser.Location = new Point(24, 88);
+            lblUser.ForeColor = Color.FromArgb(20, 34, 55);
+            lblUser.Location = new Point(22, 63);
+            lblUser.Margin = new Padding(0);
             lblUser.Name = "lblUser";
             lblUser.Size = new Size(142, 23);
             lblUser.TabIndex = 1;
@@ -215,29 +235,52 @@
             // 
             // lblPreencha
             // 
+            lblPreencha.Anchor = AnchorStyles.Left;
             lblPreencha.AutoSize = true;
-            lblPreencha.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPreencha.Location = new Point(24, 22);
-            lblPreencha.Margin = new Padding(3, 8, 3, 0);
+            tlpCentral.SetColumnSpan(lblPreencha, 2);
+            lblPreencha.Font = new Font("Segoe UI Semibold", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPreencha.ForeColor = Color.FromArgb(20, 34, 55);
+            lblPreencha.Location = new Point(22, 24);
+            lblPreencha.Margin = new Padding(0);
             lblPreencha.Name = "lblPreencha";
-            lblPreencha.Size = new Size(260, 28);
+            lblPreencha.Size = new Size(325, 35);
             lblPreencha.TabIndex = 0;
             lblPreencha.Text = "Preencha suas informações";
             lblPreencha.Click += lblPreencha_Click;
             // 
+            // btnMostrarSenha
+            //
+            btnMostrarSenha.Anchor = AnchorStyles.Left;
+            btnMostrarSenha.BackColor = Color.White;
+            btnMostrarSenha.Cursor = Cursors.Hand;
+            btnMostrarSenha.FlatAppearance.BorderColor = Color.FromArgb(218, 225, 233);
+            btnMostrarSenha.FlatStyle = FlatStyle.Flat;
+            btnMostrarSenha.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnMostrarSenha.ForeColor = Color.FromArgb(52, 67, 88);
+            btnMostrarSenha.Location = new Point(22, 205);
+            btnMostrarSenha.Margin = new Padding(0);
+            btnMostrarSenha.Name = "btnMostrarSenha";
+            btnMostrarSenha.Size = new Size(104, 27);
+            btnMostrarSenha.TabIndex = 5;
+            btnMostrarSenha.Text = "Mostrar senha";
+            btnMostrarSenha.UseVisualStyleBackColor = false;
+            btnMostrarSenha.Click += btnMostrarSenha_Click;
+            //
             // btnEntrar
             // 
-            btnEntrar.BackColor = Color.FromArgb(212, 165, 30);
+            btnEntrar.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            btnEntrar.BackColor = Color.FromArgb(232, 185, 63);
             btnEntrar.BackgroundImageLayout = ImageLayout.None;
+            tlpCentral.SetColumnSpan(btnEntrar, 2);
             btnEntrar.Cursor = Cursors.Hand;
             btnEntrar.FlatAppearance.BorderSize = 0;
             btnEntrar.FlatStyle = FlatStyle.Flat;
             btnEntrar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEntrar.ForeColor = Color.Black;
-            btnEntrar.Location = new Point(24, 259);
-            btnEntrar.Margin = new Padding(3, 4, 3, 4);
+            btnEntrar.Location = new Point(22, 240);
+            btnEntrar.Margin = new Padding(0, 4, 0, 4);
             btnEntrar.Name = "btnEntrar";
-            btnEntrar.Size = new Size(82, 33);
+            btnEntrar.Size = new Size(372, 34);
             btnEntrar.TabIndex = 6;
             btnEntrar.Text = "Entrar";
             btnEntrar.UseVisualStyleBackColor = false;
@@ -247,10 +290,12 @@
             // 
             lbl.Anchor = AnchorStyles.None;
             lbl.AutoSize = true;
-            lbl.ForeColor = SystemColors.ActiveBorder;
-            lbl.Location = new Point(47, 346);
+            tlpCentral.SetColumnSpan(lbl, 2);
+            lbl.ForeColor = Color.FromArgb(100, 113, 129);
+            lbl.Location = new Point(35, 289);
+            lbl.Margin = new Padding(0);
             lbl.Name = "lbl";
-            lbl.Size = new Size(346, 25);
+            lbl.Size = new Size(346, 40);
             lbl.TabIndex = 7;
             lbl.Text = "Acesso exclusivo de funcionários cadastrados pela empresa.";
             lbl.Click += label1_Click;
@@ -259,6 +304,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(20, 34, 55);
             ClientSize = new Size(914, 600);
             Controls.Add(tlpLogin);
             Margin = new Padding(3, 4, 3, 4);
@@ -290,6 +336,7 @@
         private Label lblSenha;
         private TextBox txtSenha;
         private Button btnEntrar;
+        private Button btnMostrarSenha;
         private Label lblEsqueciSenha;
         private Label lbl;
     }
