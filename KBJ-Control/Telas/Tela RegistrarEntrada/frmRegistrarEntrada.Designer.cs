@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             pnlTitulo = new Panel();
-            label1 = new Label();
+            lblTitulo = new Label();
             lblBuscarVisitante = new Label();
             textBox1 = new TextBox();
             dgvVisitantes = new DataGridView();
@@ -47,22 +47,22 @@
             // pnlTitulo
             // 
             pnlTitulo.BackColor = Color.FromArgb(224, 224, 224);
-            pnlTitulo.Controls.Add(label1);
+            pnlTitulo.Controls.Add(lblTitulo);
             pnlTitulo.Location = new Point(0, 0);
             pnlTitulo.Name = "pnlTitulo";
-            pnlTitulo.Size = new Size(486, 47);
+            pnlTitulo.Size = new Size(486, 46);
             pnlTitulo.TabIndex = 0;
             // 
-            // label1
+            // lblTitulo
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(12, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(156, 25);
-            label1.TabIndex = 0;
-            label1.Text = "Registrar entrada";
-            label1.Click += label1_Click;
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTitulo.Location = new Point(12, 9);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(156, 25);
+            lblTitulo.TabIndex = 0;
+            lblTitulo.Text = "Registrar entrada";
+            lblTitulo.Click += label1_Click;
             // 
             // lblBuscarVisitante
             // 
@@ -183,7 +183,7 @@
         #endregion
 
         private Panel pnlTitulo;
-        private Label label1;
+        private Label lblTitulo;
         private Label lblBuscarVisitante;
         private TextBox textBox1;
         private DataGridView dgvVisitantes;

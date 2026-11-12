@@ -45,6 +45,16 @@ namespace KBJK_Control.Properties {
                 return resourceMan;
             }
         }
+
+        /// <summary>
+        ///   Obtém a arte institucional da tela de boas-vindas.
+        /// </summary>
+        internal static global::System.Drawing.Bitmap BoasVindasRecepcao {
+            get {
+                object obj = ResourceManager.GetObject("BoasVindasRecepcao", resourceCulture);
+                return ((global::System.Drawing.Bitmap)(obj));
+            }
+        }
         
         /// <summary>
         ///   Substitui a propriedade CurrentUICulture do thread atual para todas as
