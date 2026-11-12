@@ -60,8 +60,9 @@ namespace KBJK_Control.Telas.Tela_RegistrarEntrada
             {
                 using var conexao = ConexaoBD.ObterConexao();
                 using var comando = conexao.CreateCommand();
-                comando.CommandText = "INSERT INTO visitas (visitante_id, destino, usuario_entrada_id, motivo_visita, observacoes) VALUES (@visitante, @destino, @usuario, @motivo, @observacoes)";
+                comando.CommandText = "INSERT INTO visitas (visitante_id, empresa_origem, destino, usuario_entrada_id, motivo_visita, observacoes) VALUES (@visitante, @empresa, @destino, @usuario, @motivo, @observacoes)";
                 comando.Parameters.AddWithValue("@visitante", Convert.ToUInt32(dgvVisitantes.SelectedRows[0].Cells["visitante_id"].Value));
+                comando.Parameters.AddWithValue("@empresa", string.IsNullOrWhiteSpace(txtEmpresa.Text) ? DBNull.Value : txtEmpresa.Text.Trim());
                 comando.Parameters.AddWithValue("@destino", txtPessoaSetorVisitado.Text.Trim());
                 comando.Parameters.AddWithValue("@usuario", _usuarioId);
                 comando.Parameters.AddWithValue("@motivo", motivo);

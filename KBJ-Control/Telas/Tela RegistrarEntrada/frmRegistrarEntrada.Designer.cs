@@ -40,6 +40,8 @@
             txtMotivo = new TextBox();
             cmbMotivo = new ComboBox();
             lblCategoria = new Label();
+            lblEmpresa = new Label();
+            txtEmpresa = new TextBox();
             btnCancelar = new Button();
             btnConfirmarEntrada = new Button();
             pnlTitulo.SuspendLayout();
@@ -140,7 +142,7 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(90, 383);
+            btnCancelar.Location = new Point(90, 439);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(129, 32);
             btnCancelar.TabIndex = 9;
@@ -149,7 +151,7 @@
             // 
             // btnConfirmarEntrada
             // 
-            btnConfirmarEntrada.Location = new Point(250, 383);
+            btnConfirmarEntrada.Location = new Point(250, 439);
             btnConfirmarEntrada.Name = "btnConfirmarEntrada";
             btnConfirmarEntrada.Size = new Size(129, 32);
             btnConfirmarEntrada.TabIndex = 10;
@@ -169,7 +171,16 @@
             cmbMotivo.Location = new Point(12, 335);
             cmbMotivo.Size = new Size(451, 23);
             cmbMotivo.Items.AddRange(new object[] { "CLIENTES", "FORNECEDORES", "PRESTADOR DE SERVIÇO", "OUTROS" });
-            ClientSize = new Size(484, 427);
+            lblEmpresa.AutoSize = true;
+            lblEmpresa.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblEmpresa.Location = new Point(12, 371);
+            lblEmpresa.Text = "Empresa de origem (opcional)";
+            txtEmpresa.Location = new Point(12, 391);
+            txtEmpresa.Size = new Size(451, 23);
+            txtEmpresa.MaxLength = 150;
+            ClientSize = new Size(484, 483);
+            Controls.Add(lblEmpresa);
+            Controls.Add(txtEmpresa);
             Controls.Add(lblCategoria);
             Controls.Add(cmbMotivo);
             Controls.Add(btnConfirmarEntrada);
@@ -206,6 +217,8 @@
         private TextBox txtMotivo;
         private ComboBox cmbMotivo;
         private Label lblCategoria;
+        private Label lblEmpresa;
+        private TextBox txtEmpresa;
         private Button btnCancelar;
         private Button btnConfirmarEntrada;
     }
