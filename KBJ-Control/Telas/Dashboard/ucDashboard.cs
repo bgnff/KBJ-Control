@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,6 +18,14 @@ namespace KBJK_Control.Telas.Dashboard
             InitializeComponent();
             btnCadastrarVisitante.Click += AbrirCadastro;
             btnRegistrarEntrada.Click += AbrirRegistroEntrada;
+            dgvVisitasHoje.AutoGenerateColumns = false;
+            colVisitante.DataPropertyName = "visitante";
+            colEmpresa.DataPropertyName = "empresa_origem";
+            colDestino.DataPropertyName = "destino";
+            colEntrada.DataPropertyName = "data_entrada";
+            colSaida.DataPropertyName = "data_saida";
+            colSituacao.DataPropertyName = "situacao";
+            Load += (_, _) => { if (System.ComponentModel.LicenseManager.UsageMode != System.ComponentModel.LicenseUsageMode.Designtime) Carregar(); };
         }
 
         public ucDashboard(uint usuarioId) : this() => _usuarioId = usuarioId;
@@ -25,13 +33,41 @@ namespace KBJK_Control.Telas.Dashboard
         private void AbrirCadastro(object? sender, EventArgs e)
         {
             using var tela = new FrmCadastrarVisitante();
-            tela.ShowDialog(FindForm());
+            if (tela.ShowDialog(FindForm()) == DialogResult.OK) Carregar();
         }
 
         private void AbrirRegistroEntrada(object? sender, EventArgs e)
         {
             using var tela = new KBJK_Control.Telas.Tela_RegistrarEntrada.frmRegistrarEntrada(_usuarioId);
-            tela.ShowDialog(FindForm());
+            if (tela.ShowDialog(FindForm()) == DialogResult.OK) Carregar();
+        }
+
+        private void Carregar()
+        {
+            try
+            {
+                var repo = new VisitaRepository();
+                var hoje = repo.Listar(inicio: DateTime.Today, fim: DateTime.Today);
+                dgvVisitasHoje.DataSource = hoje;
+                lblTotalPresentes.Text = repo.Listar(situacao: "EM ANDAMENTO").Rows.Count.ToString();
+                using var conexao = ConexaoBD.ObterConexao();
+                using var comando = conexao.CreateCommand();
+                comando.CommandText = "SELECT (SELECT COUNT(*) FROM visitas WHERE data_entrada >= CURDATE() AND data_entrada < CURDATE() + INTERVAL 1 DAY), (SELECT COUNT(*) FROM visitas WHERE data_saida >= CURDATE() AND data_saida < CURDATE() + INTERVAL 1 DAY), (SELECT COUNT(*) FROM visitantes WHERE data_registro >= CURDATE() AND data_registro < CURDATE() + INTERVAL 1 DAY)";
+                conexao.Open();
+                using var leitor = comando.ExecuteReader();
+                if (leitor.Read())
+                {
+                    lblTotalEntradas.Text = leitor.GetInt64(0).ToString();
+                    lblTotalSaidas.Text = leitor.GetInt64(1).ToString();
+                    lblTotalCadastros.Text = leitor.GetInt64(2).ToString();
+                }
+            }
+            catch (MySqlConnector.MySqlException)
+            {
+                dgvVisitasHoje.DataSource = null;
+                lblTotalPresentes.Text = lblTotalEntradas.Text = lblTotalSaidas.Text = lblTotalCadastros.Text = "—";
+                lblDescricaoDashboard.Text = "Não foi possível carregar os dados. Verifique a conexão.";
+            }
         }
 
         private void dgvVisitasHoje_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -43,12 +79,8 @@ namespace KBJK_Control.Telas.Dashboard
             {
                 var linha = dgvVisitasHoje.Rows[e.RowIndex];
 
-                string visitante =
-                    Convert.ToString(linha.Cells["colVisitante"].Value) ?? "";
-
-                MessageBox.Show(
-                    $"Visita selecionada: {visitante}",
-                    "Detalhes da visita");
+                if (linha.DataBoundItem is System.Data.DataRowView visita)
+                    MessageBox.Show($"Visitante: {visita["visitante"]}\nDocumento: {visita["documento"]}\nDestino: {visita["destino"]}\nEntrada: {visita["data_entrada"]}\nSaída: {visita["data_saida"]}\nMotivo: {visita["motivo_visita"]}\nObservações: {visita["observacoes"]}", "Detalhes da visita");
             }
         }
 
