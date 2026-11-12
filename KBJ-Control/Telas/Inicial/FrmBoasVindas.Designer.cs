@@ -339,25 +339,27 @@ namespace KBJK_Control.Telas.Inicial
             lblBoasVindas.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tlpImagemInicial
-            //
+            // 
             tlpImagemInicial.ColumnCount = 1;
             tlpImagemInicial.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tlpImagemInicial.Controls.Add(pictureBox1, 0, 0);
             tlpImagemInicial.Dock = DockStyle.Fill;
+            tlpImagemInicial.Location = new Point(0, 0);
             tlpImagemInicial.Margin = new Padding(0);
             tlpImagemInicial.Name = "tlpImagemInicial";
             tlpImagemInicial.RowCount = 1;
             tlpImagemInicial.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpImagemInicial.Size = new Size(600, 704);
             tlpImagemInicial.TabIndex = 2;
             tlpImagemInicial.Paint += tlpImagemInicial_Paint;
-            //
+            // 
             // pictureBox1
             // 
             pictureBox1.Dock = DockStyle.Fill;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(3, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(670, 698);
+            pictureBox1.Size = new Size(594, 698);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
