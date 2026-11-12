@@ -31,6 +31,7 @@ namespace KBJK_Control.Telas.Principal
         public FrmPrincipal(uint usuarioId) : this()
         {
             _usuarioId = usuarioId;
+            AbrirTela(new ucDashboard(usuarioId));
         }
 
         private void AbrirTela(UserControl tela)
@@ -124,7 +125,7 @@ namespace KBJK_Control.Telas.Principal
         private void btnDashboard_Click(object sender, EventArgs e)
         {
 
-            AbrirTela(new ucDashboard());
+            AbrirTela(new ucDashboard(_usuarioId));
             SelecionarBotao(btnDashboard);
 
         }

@@ -12,12 +12,15 @@ namespace KBJK_Control.Telas.Dashboard
 {
     public partial class ucDashboard : UserControl
     {
+        private readonly uint _usuarioId;
         public ucDashboard()
         {
             InitializeComponent();
             btnCadastrarVisitante.Click += AbrirCadastro;
             btnRegistrarEntrada.Click += AbrirRegistroEntrada;
         }
+
+        public ucDashboard(uint usuarioId) : this() => _usuarioId = usuarioId;
 
         private void AbrirCadastro(object? sender, EventArgs e)
         {
@@ -27,7 +30,7 @@ namespace KBJK_Control.Telas.Dashboard
 
         private void AbrirRegistroEntrada(object? sender, EventArgs e)
         {
-            using var tela = new KBJK_Control.Telas.Tela_RegistrarEntrada.frmRegistrarEntrada();
+            using var tela = new KBJK_Control.Telas.Tela_RegistrarEntrada.frmRegistrarEntrada(_usuarioId);
             tela.ShowDialog(FindForm());
         }
 

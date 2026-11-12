@@ -38,6 +38,8 @@
             txtPessoaSetorVisitado = new TextBox();
             lblMotivo = new Label();
             txtMotivo = new TextBox();
+            cmbMotivo = new ComboBox();
+            lblCategoria = new Label();
             btnCancelar = new Button();
             btnConfirmarEntrada = new Button();
             pnlTitulo.SuspendLayout();
@@ -126,7 +128,7 @@
             lblMotivo.Name = "lblMotivo";
             lblMotivo.Size = new Size(104, 15);
             lblMotivo.TabIndex = 7;
-            lblMotivo.Text = "Motivo (opcional)";
+            lblMotivo.Text = "Observações (opcional)";
             // 
             // txtMotivo
             // 
@@ -138,7 +140,7 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(90, 317);
+            btnCancelar.Location = new Point(90, 383);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(129, 32);
             btnCancelar.TabIndex = 9;
@@ -147,7 +149,7 @@
             // 
             // btnConfirmarEntrada
             // 
-            btnConfirmarEntrada.Location = new Point(250, 317);
+            btnConfirmarEntrada.Location = new Point(250, 383);
             btnConfirmarEntrada.Name = "btnConfirmarEntrada";
             btnConfirmarEntrada.Size = new Size(129, 32);
             btnConfirmarEntrada.TabIndex = 10;
@@ -159,7 +161,17 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(484, 361);
+            lblCategoria.AutoSize = true;
+            lblCategoria.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblCategoria.Location = new Point(12, 315);
+            lblCategoria.Text = "Motivo da visita *";
+            cmbMotivo.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbMotivo.Location = new Point(12, 335);
+            cmbMotivo.Size = new Size(451, 23);
+            cmbMotivo.Items.AddRange(new object[] { "CLIENTES", "FORNECEDORES", "PRESTADOR DE SERVIÇO", "OUTROS" });
+            ClientSize = new Size(484, 427);
+            Controls.Add(lblCategoria);
+            Controls.Add(cmbMotivo);
             Controls.Add(btnConfirmarEntrada);
             Controls.Add(btnCancelar);
             Controls.Add(txtMotivo);
@@ -192,6 +204,8 @@
         private TextBox txtPessoaSetorVisitado;
         private Label lblMotivo;
         private TextBox txtMotivo;
+        private ComboBox cmbMotivo;
+        private Label lblCategoria;
         private Button btnCancelar;
         private Button btnConfirmarEntrada;
     }
