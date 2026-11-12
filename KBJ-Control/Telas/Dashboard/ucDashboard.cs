@@ -15,6 +15,20 @@ namespace KBJK_Control.Telas.Dashboard
         public ucDashboard()
         {
             InitializeComponent();
+            btnCadastrarVisitante.Click += AbrirCadastro;
+            btnRegistrarEntrada.Click += AbrirRegistroEntrada;
+        }
+
+        private void AbrirCadastro(object? sender, EventArgs e)
+        {
+            using var tela = new FrmCadastrarVisitante();
+            tela.ShowDialog(FindForm());
+        }
+
+        private void AbrirRegistroEntrada(object? sender, EventArgs e)
+        {
+            using var tela = new KBJK_Control.Telas.Tela_RegistrarEntrada.frmRegistrarEntrada();
+            tela.ShowDialog(FindForm());
         }
 
         private void dgvVisitasHoje_CellContentClick(object sender, DataGridViewCellEventArgs e)
