@@ -187,7 +187,7 @@
             lblDesc.Name = "lblDesc";
             lblDesc.Size = new Size(474, 15);
             lblDesc.TabIndex = 14;
-            lblDesc.Text = "A empresa será informada ao registrar a entrada. Ao salvar, o visitante ficará selecionado.";
+            lblDesc.Text = "A empresa será informada ao registrar a entrada.";
             // 
             // btnCancelar
             // 
@@ -201,11 +201,14 @@
             // btnSalvarCadastro
             // 
             btnSalvarCadastro.Location = new Point(355, 3);
+            btnSalvarCadastro.BackColor = Color.FromArgb(232, 185, 63);
+            btnSalvarCadastro.FlatStyle = FlatStyle.Flat;
+            btnSalvarCadastro.FlatAppearance.BorderSize = 0;
             btnSalvarCadastro.Name = "btnSalvarCadastro";
             btnSalvarCadastro.Size = new Size(117, 32);
             btnSalvarCadastro.TabIndex = 16;
             btnSalvarCadastro.Text = "Salvar Cadastro";
-            btnSalvarCadastro.UseVisualStyleBackColor = true;
+            btnSalvarCadastro.UseVisualStyleBackColor = false;
             // 
             // FrmCadastrarVisitante
             // 

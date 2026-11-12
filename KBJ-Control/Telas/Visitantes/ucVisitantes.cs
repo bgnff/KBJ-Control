@@ -16,6 +16,14 @@ namespace KBJK_Control.Telas.Visitantes
             Load += ucVisitantes_Load;
             btnPesquisarVisitantes.Click += btnPesquisarVisitantes_Click;
             txtPesquisaVisitantes.KeyDown += txtPesquisaVisitantes_KeyDown;
+            btnCadastrarVisitante.Click += btnCadastrarVisitante_Click;
+        }
+
+        private void btnCadastrarVisitante_Click(object? sender, EventArgs e)
+        {
+            using var tela = new KBJK_Control.Telas.Dashboard.FrmCadastrarVisitante();
+            if (tela.ShowDialog(FindForm()) == DialogResult.OK)
+                CarregarVisitantes();
         }
 
         private void ConfigurarTabela()
