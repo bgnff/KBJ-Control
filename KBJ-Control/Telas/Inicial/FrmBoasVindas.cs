@@ -109,6 +109,13 @@ namespace KBJK_Control.Telas.Inicial
             e.Graphics.DrawLine(caneta, 0, 0, pnlBarraStatus.ClientSize.Width, 0);
         }
 
+        private void tlpImagemInicial_Paint(object sender, PaintEventArgs e)
+        {
+            using var caneta = new Pen(Color.FromArgb(232, 185, 63), 2F);
+            int x = tlpImagemInicial.ClientSize.Width - 1;
+            e.Graphics.DrawLine(caneta, x, 0, x, tlpImagemInicial.ClientSize.Height);
+        }
+
         private void lblInstrucao_Click(object sender, EventArgs e)
         {
 

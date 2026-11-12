@@ -200,8 +200,8 @@ namespace KBJK_Control.Telas.Inicial
             // 
             tlpAreaBoasVindas.BackColor = Color.FromArgb(20, 34, 55);
             tlpAreaBoasVindas.ColumnCount = 2;
-            tlpAreaBoasVindas.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 46F));
-            tlpAreaBoasVindas.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 54F));
+            tlpAreaBoasVindas.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 43.9695549F));
+            tlpAreaBoasVindas.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 56.0304451F));
             tlpAreaBoasVindas.Controls.Add(tlpConteudoCentral, 1, 0);
             tlpAreaBoasVindas.Controls.Add(tlpImagemInicial, 0, 0);
             tlpAreaBoasVindas.Dock = DockStyle.Fill;
@@ -215,7 +215,7 @@ namespace KBJK_Control.Telas.Inicial
             // 
             // tlpConteudoCentral
             // 
-            tlpConteudoCentral.Anchor = AnchorStyles.Left;
+            tlpConteudoCentral.Anchor = AnchorStyles.None;
             tlpConteudoCentral.ColumnCount = 1;
             tlpConteudoCentral.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tlpConteudoCentral.Controls.Add(picLogo, 0, 0);
@@ -223,7 +223,7 @@ namespace KBJK_Control.Telas.Inicial
             tlpConteudoCentral.Controls.Add(lblBoasVindas, 0, 3);
             tlpConteudoCentral.Controls.Add(lblInstrucao, 0, 4);
             tlpConteudoCentral.Controls.Add(btnIniciar, 0, 6);
-            tlpConteudoCentral.Location = new Point(829, 262);
+            tlpConteudoCentral.Location = new Point(890, 262);
             tlpConteudoCentral.Margin = new Padding(44, 0, 72, 0);
             tlpConteudoCentral.Name = "tlpConteudoCentral";
             tlpConteudoCentral.RowCount = 7;
@@ -341,18 +341,17 @@ namespace KBJK_Control.Telas.Inicial
             // tlpImagemInicial
             // 
             tlpImagemInicial.ColumnCount = 1;
-            tlpImagemInicial.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tlpImagemInicial.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tlpImagemInicial.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tlpImagemInicial.Controls.Add(pictureBox1, 0, 0);
             tlpImagemInicial.Dock = DockStyle.Fill;
             tlpImagemInicial.Location = new Point(0, 0);
             tlpImagemInicial.Margin = new Padding(0);
             tlpImagemInicial.Name = "tlpImagemInicial";
             tlpImagemInicial.RowCount = 1;
-            tlpImagemInicial.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tlpImagemInicial.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tlpImagemInicial.Size = new Size(785, 880);
+            tlpImagemInicial.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tlpImagemInicial.Size = new Size(751, 880);
             tlpImagemInicial.TabIndex = 2;
+            tlpImagemInicial.Paint += tlpImagemInicial_Paint;
             // 
             // pictureBox1
             // 
@@ -360,7 +359,7 @@ namespace KBJK_Control.Telas.Inicial
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(3, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(779, 874);
+            pictureBox1.Size = new Size(745, 874);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
