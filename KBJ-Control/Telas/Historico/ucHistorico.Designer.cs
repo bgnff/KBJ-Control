@@ -43,8 +43,10 @@
             dtpDataInicial = new DateTimePicker();
             dtpDataFinal = new DateTimePicker();
             cmbSituacaoHistorico = new ComboBox();
-            btnFiltrarHistorico = new Button();
+            btnFiltrarHistorico = new KBJK_Control.Controles.BotaoArredondado();
+            btnLimparFiltros = new KBJK_Control.Controles.BotaoArredondado();
             dgvHistorico = new DataGridView();
+            pnlTabelaHistorico = new KBJK_Control.Controles.TabelaArredondada();
             colVisitante = new DataGridViewTextBoxColumn();
             colDocumento = new DataGridViewTextBoxColumn();
             colEmpresa = new DataGridViewTextBoxColumn();
@@ -66,7 +68,7 @@
             tlpHistorico.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tlpHistorico.Controls.Add(pnlCabecalhoHistorico, 0, 0);
             tlpHistorico.Controls.Add(tlpFiltrosHistorico, 0, 1);
-            tlpHistorico.Controls.Add(dgvHistorico, 0, 2);
+            tlpHistorico.Controls.Add(pnlTabelaHistorico, 0, 2);
             tlpHistorico.Controls.Add(label1, 0, 3);
             tlpHistorico.Dock = DockStyle.Fill;
             tlpHistorico.Location = new Point(0, 0);
@@ -111,16 +113,17 @@
             lblTituloHistorico.Name = "lblTituloHistorico";
             lblTituloHistorico.Size = new Size(135, 37);
             lblTituloHistorico.TabIndex = 0;
-            lblTituloHistorico.Text = "Histórico";
+            lblTituloHistorico.Text = "Histórico de visitas";
             // 
             // tlpFiltrosHistorico
             // 
-            tlpFiltrosHistorico.ColumnCount = 5;
-            tlpFiltrosHistorico.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 360F));
-            tlpFiltrosHistorico.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 145F));
-            tlpFiltrosHistorico.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 145F));
-            tlpFiltrosHistorico.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 120F));
+            tlpFiltrosHistorico.ColumnCount = 6;
             tlpFiltrosHistorico.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tlpFiltrosHistorico.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 165F));
+            tlpFiltrosHistorico.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 165F));
+            tlpFiltrosHistorico.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 150F));
+            tlpFiltrosHistorico.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 140F));
+            tlpFiltrosHistorico.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 120F));
             tlpFiltrosHistorico.Controls.Add(lblPesquisaHistorico, 0, 0);
             tlpFiltrosHistorico.Controls.Add(lblDataInicial, 1, 0);
             tlpFiltrosHistorico.Controls.Add(lblDataFinal, 2, 0);
@@ -129,13 +132,14 @@
             tlpFiltrosHistorico.Controls.Add(dtpDataInicial, 1, 1);
             tlpFiltrosHistorico.Controls.Add(dtpDataFinal, 2, 1);
             tlpFiltrosHistorico.Controls.Add(cmbSituacaoHistorico, 3, 1);
-            tlpFiltrosHistorico.Controls.Add(btnFiltrarHistorico, 4, 1);
+            tlpFiltrosHistorico.Controls.Add(btnFiltrarHistorico, 5, 1);
+            tlpFiltrosHistorico.Controls.Add(btnLimparFiltros, 4, 1);
             tlpFiltrosHistorico.Dock = DockStyle.Fill;
             tlpFiltrosHistorico.Location = new Point(24, 96);
             tlpFiltrosHistorico.Margin = new Padding(0);
             tlpFiltrosHistorico.Name = "tlpFiltrosHistorico";
             tlpFiltrosHistorico.RowCount = 2;
-            tlpFiltrosHistorico.RowStyles.Add(new RowStyle(SizeType.Absolute, 28F));
+            tlpFiltrosHistorico.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
             tlpFiltrosHistorico.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tlpFiltrosHistorico.Size = new Size(952, 100);
             tlpFiltrosHistorico.TabIndex = 1;
@@ -179,7 +183,7 @@
             // txtPesquisaHistorico
             // 
             txtPesquisaHistorico.BorderStyle = BorderStyle.FixedSingle;
-            txtPesquisaHistorico.Location = new Point(3, 34);
+            txtPesquisaHistorico.Location = new Point(3, 36);
             txtPesquisaHistorico.Margin = new Padding(3, 6, 12, 0);
             txtPesquisaHistorico.Name = "txtPesquisaHistorico";
             txtPesquisaHistorico.PlaceholderText = "Pesquise por nome ou documento";
@@ -190,20 +194,20 @@
             // 
             dtpDataInicial.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             dtpDataInicial.Format = DateTimePickerFormat.Short;
-            dtpDataInicial.Location = new Point(363, 34);
+            dtpDataInicial.Location = new Point(3, 36);
             dtpDataInicial.Margin = new Padding(3, 6, 12, 0);
             dtpDataInicial.Name = "dtpDataInicial";
-            dtpDataInicial.Size = new Size(130, 25);
+            dtpDataInicial.Size = new Size(150, 25);
             dtpDataInicial.TabIndex = 5;
             // 
             // dtpDataFinal
             // 
             dtpDataFinal.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             dtpDataFinal.Format = DateTimePickerFormat.Short;
-            dtpDataFinal.Location = new Point(508, 34);
+            dtpDataFinal.Location = new Point(3, 36);
             dtpDataFinal.Margin = new Padding(3, 6, 12, 0);
             dtpDataFinal.Name = "dtpDataFinal";
-            dtpDataFinal.Size = new Size(130, 25);
+            dtpDataFinal.Size = new Size(150, 25);
             dtpDataFinal.TabIndex = 6;
             // 
             // cmbSituacaoHistorico
@@ -212,28 +216,47 @@
             cmbSituacaoHistorico.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbSituacaoHistorico.FormattingEnabled = true;
             cmbSituacaoHistorico.Items.AddRange(new object[] { "Todas", "Em andamento", "Encerrada" });
-            cmbSituacaoHistorico.Location = new Point(653, 34);
+            cmbSituacaoHistorico.Location = new Point(3, 36);
             cmbSituacaoHistorico.Margin = new Padding(3, 6, 12, 0);
             cmbSituacaoHistorico.Name = "cmbSituacaoHistorico";
-            cmbSituacaoHistorico.Size = new Size(105, 25);
+            cmbSituacaoHistorico.Size = new Size(135, 25);
             cmbSituacaoHistorico.TabIndex = 7;
             cmbSituacaoHistorico.SelectedIndexChanged += cmbSituacaoHistorico_SelectedIndexChanged;
             // 
             // btnFiltrarHistorico
             // 
-            btnFiltrarHistorico.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnFiltrarHistorico.Dock = DockStyle.Fill;
             btnFiltrarHistorico.BackColor = Color.FromArgb(212, 165, 30);
             btnFiltrarHistorico.Cursor = Cursors.Hand;
             btnFiltrarHistorico.FlatAppearance.BorderSize = 0;
             btnFiltrarHistorico.FlatStyle = FlatStyle.Flat;
             btnFiltrarHistorico.ForeColor = Color.FromArgb(48, 55, 65);
-            btnFiltrarHistorico.Location = new Point(842, 28);
-            btnFiltrarHistorico.Margin = new Padding(0);
+            btnFiltrarHistorico.Location = new Point(0, 36);
+            btnFiltrarHistorico.Margin = new Padding(0, 6, 0, 0);
             btnFiltrarHistorico.Name = "btnFiltrarHistorico";
-            btnFiltrarHistorico.Size = new Size(110, 36);
+            btnFiltrarHistorico.Raio = 10;
+            btnFiltrarHistorico.Size = new Size(120, 40);
             btnFiltrarHistorico.TabIndex = 8;
             btnFiltrarHistorico.Text = "Filtrar";
             btnFiltrarHistorico.UseVisualStyleBackColor = false;
+            //
+            // btnLimparFiltros
+            //
+            btnLimparFiltros.Dock = DockStyle.Fill;
+            btnLimparFiltros.BackColor = Color.White;
+            btnLimparFiltros.Cursor = Cursors.Hand;
+            btnLimparFiltros.FlatAppearance.BorderColor = Color.FromArgb(212, 217, 223);
+            btnLimparFiltros.FlatAppearance.BorderSize = 1;
+            btnLimparFiltros.FlatStyle = FlatStyle.Flat;
+            btnLimparFiltros.ForeColor = Color.FromArgb(48, 55, 65);
+            btnLimparFiltros.Location = new Point(0, 36);
+            btnLimparFiltros.Margin = new Padding(0, 6, 10, 0);
+            btnLimparFiltros.Name = "btnLimparFiltros";
+            btnLimparFiltros.Raio = 10;
+            btnLimparFiltros.Size = new Size(130, 40);
+            btnLimparFiltros.TabIndex = 9;
+            btnLimparFiltros.Text = "Limpar filtros";
+            btnLimparFiltros.UseVisualStyleBackColor = false;
             // 
             // dgvHistorico
             // 
@@ -244,13 +267,13 @@
             dgvHistorico.BackgroundColor = Color.White;
             dgvHistorico.BorderStyle = BorderStyle.None;
             dgvHistorico.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dgvHistorico.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dgvHistorico.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(237, 240, 243);
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(20, 34, 55);
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(48, 55, 65);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(237, 240, 243);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(48, 55, 65);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(20, 34, 55);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvHistorico.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvHistorico.ColumnHeadersHeight = 40;
@@ -267,7 +290,13 @@
             dgvHistorico.Dock = DockStyle.Fill;
             dgvHistorico.EnableHeadersVisualStyles = false;
             dgvHistorico.GridColor = Color.FromArgb(212, 217, 223);
-            dgvHistorico.Location = new Point(24, 196);
+            pnlTabelaHistorico.Controls.Add(dgvHistorico);
+            pnlTabelaHistorico.Dock = DockStyle.Fill;
+            pnlTabelaHistorico.Margin = new Padding(0);
+            pnlTabelaHistorico.Name = "pnlTabelaHistorico";
+            pnlTabelaHistorico.TabIndex = 2;
+            dgvHistorico.Dock = DockStyle.Fill;
+            dgvHistorico.Location = new Point(1, 1);
             dgvHistorico.Margin = new Padding(0);
             dgvHistorico.MultiSelect = false;
             dgvHistorico.Name = "dgvHistorico";
@@ -381,8 +410,10 @@
         private DateTimePicker dtpDataInicial;
         private DateTimePicker dtpDataFinal;
         private ComboBox cmbSituacaoHistorico;
-        private Button btnFiltrarHistorico;
+        private KBJK_Control.Controles.BotaoArredondado btnFiltrarHistorico;
+        private KBJK_Control.Controles.BotaoArredondado btnLimparFiltros;
         private DataGridView dgvHistorico;
+        private KBJK_Control.Controles.TabelaArredondada pnlTabelaHistorico;
         private DataGridViewTextBoxColumn colVisitante;
         private DataGridViewTextBoxColumn colDocumento;
         private DataGridViewTextBoxColumn colEmpresa;
