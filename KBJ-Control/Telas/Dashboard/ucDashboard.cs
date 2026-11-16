@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
+using KBJK_Control.Controles;
 
 namespace KBJK_Control.Telas.Dashboard
 {
@@ -16,8 +18,15 @@ namespace KBJK_Control.Telas.Dashboard
         public ucDashboard()
         {
             InitializeComponent();
+            AnimacaoUI.AplicarHoverBotoes(this);
+            EstiloTabela.Aplicar(dgvVisitasHoje);
+            EstiloTabela.AplicarBotao(btnRegistrarEntrada);
+            EstiloTabela.AplicarBotao(btnCadastrarVisitante);
             btnCadastrarVisitante.Click += AbrirCadastro;
             btnRegistrarEntrada.Click += AbrirRegistroEntrada;
+            pnlPresentes.SizeChanged += (_, _) => AplicarBordasArredondadas();
+            pnlEntradas.SizeChanged += (_, _) => AplicarBordasArredondadas();
+            pnlCadastros.SizeChanged += (_, _) => AplicarBordasArredondadas();
             dgvVisitasHoje.AutoGenerateColumns = false;
             colVisitante.DataPropertyName = "visitante";
             colEmpresa.DataPropertyName = "empresa_origem";
@@ -25,7 +34,42 @@ namespace KBJK_Control.Telas.Dashboard
             colEntrada.DataPropertyName = "data_entrada";
             colSaida.DataPropertyName = "data_saida";
             colSituacao.DataPropertyName = "situacao";
-            Load += (_, _) => { if (System.ComponentModel.LicenseManager.UsageMode != System.ComponentModel.LicenseUsageMode.Designtime) Carregar(); };
+            Load += (_, _) =>
+            {
+                if (System.ComponentModel.LicenseManager.UsageMode != System.ComponentModel.LicenseUsageMode.Designtime)
+                    Carregar();
+            };
+            Resize += (_, _) => AplicarBordasArredondadas();
+            HandleCreated += (_, _) => AplicarBordasArredondadas();
+        }
+
+        private void AplicarBordasArredondadas()
+        {
+            AtualizarRegiao(pnlPresentes);
+            AtualizarRegiao(pnlEntradas);
+            AtualizarRegiao(pnlCadastros);
+        }
+
+        private static void AtualizarRegiao(Panel painel)
+        {
+            if (painel.ClientSize.Width < 2 || painel.ClientSize.Height < 2)
+                return;
+
+            Region? regiaoAnterior = painel.Region;
+            painel.Region = CriarRegiaoArredondada(painel.ClientRectangle, 12);
+            regiaoAnterior?.Dispose();
+        }
+
+        private static Region CriarRegiaoArredondada(Rectangle area, int raio)
+        {
+            using GraphicsPath caminho = new GraphicsPath();
+            int diametro = raio * 2;
+            caminho.AddArc(area.Left, area.Top, diametro, diametro, 180, 90);
+            caminho.AddArc(area.Right - diametro, area.Top, diametro, diametro, 270, 90);
+            caminho.AddArc(area.Right - diametro, area.Bottom - diametro, diametro, diametro, 0, 90);
+            caminho.AddArc(area.Left, area.Bottom - diametro, diametro, diametro, 90, 90);
+            caminho.CloseFigure();
+            return new Region(caminho);
         }
 
         public ucDashboard(uint usuarioId) : this() => _usuarioId = usuarioId;
@@ -47,26 +91,35 @@ namespace KBJK_Control.Telas.Dashboard
             try
             {
                 var repo = new VisitaRepository();
-                var hoje = repo.Listar(inicio: DateTime.Today, fim: DateTime.Today);
-                dgvVisitasHoje.DataSource = hoje;
-                lblTotalPresentes.Text = repo.Listar(situacao: "EM ANDAMENTO").Rows.Count.ToString();
-                using var conexao = ConexaoBD.ObterConexao();
-                using var comando = conexao.CreateCommand();
-                comando.CommandText = "SELECT (SELECT COUNT(*) FROM visitas WHERE data_entrada >= CURDATE() AND data_entrada < CURDATE() + INTERVAL 1 DAY), (SELECT COUNT(*) FROM visitas WHERE data_saida >= CURDATE() AND data_saida < CURDATE() + INTERVAL 1 DAY), (SELECT COUNT(*) FROM visitantes WHERE data_registro >= CURDATE() AND data_registro < CURDATE() + INTERVAL 1 DAY)";
-                conexao.Open();
-                using var leitor = comando.ExecuteReader();
-                if (leitor.Read())
-                {
-                    lblTotalEntradas.Text = leitor.GetInt64(0).ToString();
-                    lblTotalSaidas.Text = leitor.GetInt64(1).ToString();
-                    lblTotalCadastros.Text = leitor.GetInt64(2).ToString();
-                }
+
+                var visitasHoje = repo.Listar(
+                    inicio: DateTime.Today,
+                    fim: DateTime.Today);
+
+                // A seção se chama "Visitas recentes". Ela não deve sumir
+                // quando ainda não houve uma entrada na data atual; os cartões
+                // abaixo continuam sendo os indicadores exclusivos de hoje.
+                dgvVisitasHoje.DataSource = repo.Listar();
+                dgvVisitasHoje.ClearSelection();
+
+                lblTotalPresentes.Text = repo.Listar(
+                    situacao: "EM ANDAMENTO")
+                    .Rows.Count
+                    .ToString();
+
+                lblTotalEntradas.Text = visitasHoje.Rows.Count.ToString();
+
+                lblTotalCadastros.Text = new VisitanteRepository()
+                    .ContarCadastrosHoje()
+                    .ToString();
             }
             catch (MySqlConnector.MySqlException)
             {
-                dgvVisitasHoje.DataSource = null;
-                lblTotalPresentes.Text = lblTotalEntradas.Text = lblTotalSaidas.Text = lblTotalCadastros.Text = "—";
-                lblDescricaoDashboard.Text = "Não foi possível carregar os dados. Verifique a conexão.";
+                MessageBox.Show(
+                    "Não foi possível carregar os dados do Dashboard.",
+                    "Dashboard",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
 
