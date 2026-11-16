@@ -89,6 +89,12 @@ namespace KBJK_Control
         {
         }
 
+        private void btnMostrarSenha_Click(object sender, EventArgs e)
+        {
+            txtSenha.UseSystemPasswordChar = !txtSenha.UseSystemPasswordChar;
+            btnMostrarSenha.Text = txtSenha.UseSystemPasswordChar ? "Mostrar senha" : "Ocultar senha";
+        }
+
         private void txtSenha_TextChanged(object sender, EventArgs e)
         {
         }
@@ -99,6 +105,11 @@ namespace KBJK_Control
 
         private void lblUser_Click(object sender, EventArgs e)
         {
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

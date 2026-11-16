@@ -1,4 +1,4 @@
-﻿using KBJK_Control.Telas.Dashboard;
+using KBJK_Control.Telas.Dashboard;
 using KBJK_Control.Telas.Recepcao;
 using KBJK_Control.Telas.Visitantes;
 using KBJK_Control.Telas.Historico;
@@ -19,18 +19,18 @@ namespace KBJK_Control.Telas.Principal
     {
         private readonly uint _usuarioId;
 
-        public FrmPrincipal()
+        public FrmPrincipal() : this(0)
         {
+        }
+
+        public FrmPrincipal(uint usuarioId)
+        {
+            _usuarioId = usuarioId;
             InitializeComponent();
 
             ConfigurarIcones();
-            AbrirTela(new ucDashboard());
+            AbrirTela(new ucDashboard(usuarioId));
             SelecionarBotao(btnDashboard);
-        }
-
-        public FrmPrincipal(uint usuarioId) : this()
-        {
-            _usuarioId = usuarioId;
         }
 
         private void AbrirTela(UserControl tela)
@@ -65,7 +65,7 @@ namespace KBJK_Control.Telas.Principal
                 botao.ImageAlign = ContentAlignment.MiddleLeft;
                 botao.TextAlign = ContentAlignment.MiddleLeft;
                 botao.TextImageRelation = TextImageRelation.ImageBeforeText;
-                botao.Padding = new Padding(20, 0, 0, 0);
+                botao.Padding = new Padding(28, 0, 0, 0);
 
                 // Espaçamento entre o ícone e o texto.
                 botao.Text = "  " + botao.Text.Trim();
@@ -108,8 +108,8 @@ namespace KBJK_Control.Telas.Principal
                 bool ativo = botao == selecionado;
 
                 botao.BackColor = ativo
-                    ? Color.FromArgb(212, 165, 30)
-                    : Color.FromArgb(37, 45, 56);
+                    ? Color.FromArgb(232, 185, 63)
+                    : Color.FromArgb(20, 34, 55);
 
                 botao.ForeColor = ativo ? Color.Black : Color.White;
                 AtualizarIcone(botao);
@@ -124,14 +124,14 @@ namespace KBJK_Control.Telas.Principal
         private void btnDashboard_Click(object sender, EventArgs e)
         {
 
-            AbrirTela(new ucDashboard());
+            AbrirTela(new ucDashboard(_usuarioId));
             SelecionarBotao(btnDashboard);
 
         }
 
         private void btnRecepcao_Click(object sender, EventArgs e)
         {
-            AbrirTela(new ucRecepcao());
+            AbrirTela(new ucRecepcao(_usuarioId));
             SelecionarBotao(btnRecepcao);
         }
 
@@ -154,3 +154,4 @@ namespace KBJK_Control.Telas.Principal
 
     }
 }
+
