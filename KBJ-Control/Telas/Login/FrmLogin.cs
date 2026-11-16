@@ -46,17 +46,16 @@ namespace KBJK_Control
             try
             {
                 UsuarioRepository repo = new UsuarioRepository();
-                bool loginSucesso = repo.AutentificarUsuario(usuario, senha);
+                bool loginSucesso = repo.AutentificarUsuario(usuario, senha, out uint usuarioId);
 
                 if (loginSucesso)
                 {
                     this.Hide();
 
-                    using (var telaPrincipal = new FrmPrincipal())
+                    using (var telaPrincipal = new FrmPrincipal(usuarioId))
                     {
                         telaPrincipal.ShowDialog();
                     }
-
                     this.Close();
                 }
                 else
@@ -90,6 +89,12 @@ namespace KBJK_Control
         {
         }
 
+        private void btnMostrarSenha_Click(object sender, EventArgs e)
+        {
+            txtSenha.UseSystemPasswordChar = !txtSenha.UseSystemPasswordChar;
+            btnMostrarSenha.Text = txtSenha.UseSystemPasswordChar ? "Mostrar senha" : "Ocultar senha";
+        }
+
         private void txtSenha_TextChanged(object sender, EventArgs e)
         {
         }
@@ -100,6 +105,11 @@ namespace KBJK_Control
 
         private void lblUser_Click(object sender, EventArgs e)
         {
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
