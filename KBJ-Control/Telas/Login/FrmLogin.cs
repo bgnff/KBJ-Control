@@ -1,5 +1,6 @@
 using KBJK_Control.Telas.Inicial;
 using KBJK_Control.Telas.Principal;
+using KBJK_Control.Controles;
 using MySqlConnector;
 
 namespace KBJK_Control
@@ -9,6 +10,13 @@ namespace KBJK_Control
         public frmLogin()
         {
             InitializeComponent();
+            Icon = IconeAplicacao.Criar();
+            AnimacaoUI.AplicarHoverBotoes(this);
+            AnimacaoUI.AnimarAbertura(this);
+            EstiloTabela.AplicarCampo(txtUser);
+            EstiloTabela.AplicarCampo(txtSenha);
+            EstiloTabela.AplicarBotao(btnEntrar);
+            EstiloTabela.AplicarBotao(btnMostrarSenha);
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -87,6 +95,7 @@ namespace KBJK_Control
 
         private void lblEsqueciSenha_Click(object sender, EventArgs e)
         {
+
         }
 
         private void btnMostrarSenha_Click(object sender, EventArgs e)
