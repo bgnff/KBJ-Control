@@ -12,12 +12,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using KBJK_Control.Controles;
 
 namespace KBJK_Control.Telas.Principal
 {
     public partial class FrmPrincipal : Form
     {
         private readonly uint _usuarioId;
+        private System.Windows.Forms.Timer? _animacaoMenu;
 
         public FrmPrincipal() : this(0)
         {
@@ -27,8 +29,11 @@ namespace KBJK_Control.Telas.Principal
         {
             _usuarioId = usuarioId;
             InitializeComponent();
+            Icon = IconeAplicacao.Criar();
 
             ConfigurarIcones();
+            CarregarPerfilUsuario();
+            AnimacaoUI.AnimarAbertura(this);
             AbrirTela(new ucDashboard(usuarioId));
             SelecionarBotao(btnDashboard);
         }
@@ -42,8 +47,55 @@ namespace KBJK_Control.Telas.Principal
                 anterior.Dispose();
             }
 
-            tela.Dock = DockStyle.Fill;
             pnlConteudo.Controls.Add(tela);
+            AnimacaoUI.DeslizarEntrada(tela, pnlConteudo);
+        }
+
+        private void ConfigurarIcones()
+        {
+            btnDashboard.Tag = IconChar.ChartLine;
+            btnRecepcao.Tag = IconChar.DoorOpen;
+            btnVisitantes.Tag = IconChar.Users;
+            btnHistorico.Tag = IconChar.Clock;
+            btnSair.Tag = IconChar.SignOutAlt;
+
+            Button[] botoes =
+            {
+        btnDashboard, btnRecepcao, btnVisitantes,
+        btnHistorico, btnSair
+    };
+
+            foreach (Button botao in botoes)
+            {
+                botao.ImageAlign = ContentAlignment.MiddleLeft;
+                botao.TextAlign = ContentAlignment.MiddleLeft;
+                botao.TextImageRelation = TextImageRelation.ImageBeforeText;
+                botao.Padding = new Padding(28, 0, 0, 0);
+
+                // Espaçamento entre o ícone e o texto.
+                botao.Text = "  " + botao.Text.Trim();
+
+                AtualizarIcone(botao);
+            }
+        }
+
+        private void AtualizarIcone(Button botao)
+        {
+            if (botao.Tag is not IconChar icone)
+                return;
+
+            using (var gerador = new IconButton())
+            {
+                gerador.IconChar = icone;
+                gerador.IconSize = 24;
+                gerador.IconColor = botao.ForeColor;
+
+                Image novaImagem = (Image)gerador.Image.Clone();
+                Image imagemAnterior = botao.Image;
+
+                botao.Image = novaImagem;
+                imagemAnterior?.Dispose();
+            }
         }
 
         private void ConfigurarIcones()
@@ -103,18 +155,86 @@ namespace KBJK_Control.Telas.Principal
                 btnHistorico
              };
 
-            foreach (var botao in botoes)
+            if (!Visible || !IsHandleCreated)
+            {
+                AplicarEstadoMenu(botoes, selecionado, 1F);
+                return;
+            }
+
+            _animacaoMenu?.Stop();
+            _animacaoMenu?.Dispose();
+
+            var coresIniciais = botoes.ToDictionary(botao => botao, botao => botao.BackColor);
+            foreach (Button botao in botoes)
+                botao.ForeColor = botao == selecionado ? Color.Black : Color.White;
+
+            int passo = 0;
+            _animacaoMenu = new System.Windows.Forms.Timer { Interval = 15 };
+            _animacaoMenu.Tick += (_, _) =>
+            {
+                if (IsDisposed || Disposing)
+                {
+                    _animacaoMenu?.Stop();
+                    return;
+                }
+
+                passo = Math.Min(passo + 1, 18);
+                float progresso = 1F - MathF.Pow(1F - passo / 18F, 3);
+
+                foreach (Button botao in botoes)
+                {
+                    Color destino = botao == selecionado
+                        ? Color.FromArgb(232, 185, 63)
+                        : Color.FromArgb(20, 34, 55);
+                    botao.BackColor = Misturar(coresIniciais[botao], destino, progresso);
+                }
+
+                if (passo != 18)
+                    return;
+
+                AplicarEstadoMenu(botoes, selecionado, 1F);
+                _animacaoMenu.Stop();
+                _animacaoMenu.Dispose();
+                _animacaoMenu = null;
+            };
+            _animacaoMenu.Start();
+        }
+
+        private void CarregarPerfilUsuario()
+        {
+            if (_usuarioId == 0)
+                return;
+
+            try
+            {
+                var perfil = new UsuarioRepository().ObterPerfil(_usuarioId);
+                if (perfil.PossuiFuncionario)
+                {
+                    lblNomeUsuario.Text = perfil.NomeExibicao;
+                    lblLoginUsuario.Text = perfil.NomeUsuario;
+                }
+            }
+            catch (MySqlConnector.MySqlException)
+            {
+                // Mantém o texto padrão caso a sessão não possa consultar o banco.
+            }
+        }
+
+        private void AplicarEstadoMenu(IEnumerable<Button> botoes, Button selecionado, float progresso)
+        {
+            foreach (Button botao in botoes)
             {
                 bool ativo = botao == selecionado;
-
-                botao.BackColor = ativo
-                    ? Color.FromArgb(232, 185, 63)
-                    : Color.FromArgb(20, 34, 55);
-
+                botao.BackColor = ativo ? Color.FromArgb(232, 185, 63) : Color.FromArgb(20, 34, 55);
                 botao.ForeColor = ativo ? Color.Black : Color.White;
                 AtualizarIcone(botao);
             }
         }
+
+        private static Color Misturar(Color origem, Color destino, float progresso) => Color.FromArgb(
+            (int)(origem.R + (destino.R - origem.R) * progresso),
+            (int)(origem.G + (destino.G - origem.G) * progresso),
+            (int)(origem.B + (destino.B - origem.B) * progresso));
 
         private void btnHistorico_Click(object sender, EventArgs e)
         {

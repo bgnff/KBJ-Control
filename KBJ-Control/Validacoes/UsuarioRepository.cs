@@ -2,6 +2,28 @@
 using System;
 public class UsuarioRepository
 {
+    public (bool PossuiFuncionario, string NomeExibicao, string NomeUsuario) ObterPerfil(uint usuarioId)
+    {
+        const string query = """
+            SELECT f.funcionario_id IS NOT NULL AS possui_funcionario,
+                   CONCAT_WS(' ', f.nome, f.sobrenome) AS nome_exibicao,
+                   u.nome_usuario
+            FROM usuarios u
+            LEFT JOIN funcionarios f ON f.funcionario_id = u.funcionario_id
+            WHERE u.usuario_id = @usuario_id
+            """;
+
+        using MySqlConnection conexao = ConexaoBD.ObterConexao();
+        conexao.Open();
+        using MySqlCommand cmd = new(query, conexao);
+        cmd.Parameters.AddWithValue("@usuario_id", usuarioId);
+        using MySqlDataReader leitor = cmd.ExecuteReader();
+
+        return leitor.Read()
+            ? (leitor.GetBoolean("possui_funcionario"), leitor.GetString("nome_exibicao"), leitor.GetString("nome_usuario"))
+            : (false, "", "");
+    }
+
     public bool AutentificarUsuario(
         string usuarioInput,
         string senhaInput,
