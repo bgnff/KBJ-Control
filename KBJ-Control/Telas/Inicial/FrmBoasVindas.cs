@@ -1,4 +1,5 @@
 using System.Runtime.InteropServices;
+using KBJK_Control.Controles;
 
 namespace KBJK_Control.Telas.Inicial
 {
@@ -16,6 +17,15 @@ namespace KBJK_Control.Telas.Inicial
         public FrmBoasVindas()
         {
             InitializeComponent();
+            Icon = IconeAplicacao.Criar();
+            AnimacaoUI.AplicarHoverBotoes(this);
+            AnimacaoUI.AnimarAbertura(this);
+        }
+
+        private void FrmBoasVindas_Load(object sender, EventArgs e)
+        {
+            AtualizarEstadoMaximizar();
+            AplicarCantosArredondados(btnIniciar, 8);
         }
 
         private void FrmBoasVindas_Load(object sender, EventArgs e)
