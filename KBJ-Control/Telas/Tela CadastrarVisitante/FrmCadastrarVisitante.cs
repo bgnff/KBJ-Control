@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
+using KBJK_Control.Controles;
 
 namespace KBJK_Control.Telas.Dashboard
 {
@@ -15,6 +17,16 @@ namespace KBJK_Control.Telas.Dashboard
         public FrmCadastrarVisitante()
         {
             InitializeComponent();
+            Icon = IconeAplicacao.Criar();
+            AnimacaoUI.AplicarHoverBotoes(this);
+            AnimacaoUI.AnimarAbertura(this);
+            EstiloTabela.AplicarCampo(txtNome);
+            EstiloTabela.AplicarCampo(txtSobrenome);
+            EstiloTabela.AplicarCampo(cbxTipoDocumento);
+            EstiloTabela.AplicarCampo(textBox1);
+            EstiloTabela.AplicarCampo(cbxEmissor);
+            EstiloTabela.AplicarBotao(btnCancelar);
+            EstiloTabela.AplicarBotao(btnSalvarCadastro);
             cbxTipoDocumento.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxTipoDocumento.Items.AddRange(new object[] { "RG", "CPF", "PASSAPORTE" });
             cbxEmissor.Items.Add("Brasil");
@@ -24,9 +36,29 @@ namespace KBJK_Control.Telas.Dashboard
             textBox1.MaxLength = 20;
             cbxEmissor.MaxLength = 30;
             btnCancelar.Click += (_, _) => Close();
+            btnFechar.Click += (_, _) => Close();
             btnSalvarCadastro.Click += SalvarCadastro;
             AcceptButton = btnSalvarCadastro;
             CancelButton = btnCancelar;
+            Shown += (_, _) => AplicarArredondamentos();
+            Resize += (_, _) => AplicarArredondamentos();
+        }
+
+        private void AplicarArredondamentos()
+        {
+            Region = CriarRegiaoArredondada(ClientRectangle, 14);
+        }
+
+        private static Region CriarRegiaoArredondada(Rectangle area, int raio)
+        {
+            using GraphicsPath caminho = new GraphicsPath();
+            int diametro = raio * 2;
+            caminho.AddArc(area.Left, area.Top, diametro, diametro, 180, 90);
+            caminho.AddArc(area.Right - diametro, area.Top, diametro, diametro, 270, 90);
+            caminho.AddArc(area.Right - diametro, area.Bottom - diametro, diametro, diametro, 0, 90);
+            caminho.AddArc(area.Left, area.Bottom - diametro, diametro, diametro, 90, 90);
+            caminho.CloseFigure();
+            return new Region(caminho);
         }
 
         private void SalvarCadastro(object? sender, EventArgs e)
