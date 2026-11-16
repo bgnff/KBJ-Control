@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
+using KBJK_Control.Controles;
 
 namespace KBJK_Control.Telas.Visitantes
 {
@@ -10,6 +12,11 @@ namespace KBJK_Control.Telas.Visitantes
         public ucVisitantes()
         {
             InitializeComponent();
+            KBJK_Control.Controles.AnimacaoUI.AplicarHoverBotoes(this);
+            EstiloTabela.Aplicar(dgvVisitantes);
+            EstiloTabela.AplicarCampo(txtPesquisaVisitantes);
+            EstiloTabela.AplicarBotao(btnPesquisarVisitantes);
+            EstiloTabela.AplicarBotao(btnCadastrarVisitante);
 
             ConfigurarTabela();
 
@@ -17,6 +24,8 @@ namespace KBJK_Control.Telas.Visitantes
             btnPesquisarVisitantes.Click += btnPesquisarVisitantes_Click;
             txtPesquisaVisitantes.KeyDown += txtPesquisaVisitantes_KeyDown;
             btnCadastrarVisitante.Click += btnCadastrarVisitante_Click;
+            Resize += (_, _) => AplicarBordasArredondadas();
+            HandleCreated += (_, _) => AplicarBordasArredondadas();
         }
 
         private void btnCadastrarVisitante_Click(object? sender, EventArgs e)
@@ -24,6 +33,22 @@ namespace KBJK_Control.Telas.Visitantes
             using var tela = new KBJK_Control.Telas.Dashboard.FrmCadastrarVisitante();
             if (tela.ShowDialog(FindForm()) == DialogResult.OK)
                 CarregarVisitantes();
+        }
+
+        private void AplicarBordasArredondadas()
+        {
+        }
+
+        private static Region CriarRegiaoArredondada(Rectangle area, int raio)
+        {
+            using GraphicsPath caminho = new GraphicsPath();
+            int diametro = raio * 2;
+            caminho.AddArc(area.Left, area.Top, diametro, diametro, 180, 90);
+            caminho.AddArc(area.Right - diametro, area.Top, diametro, diametro, 270, 90);
+            caminho.AddArc(area.Right - diametro, area.Bottom - diametro, diametro, diametro, 0, 90);
+            caminho.AddArc(area.Left, area.Bottom - diametro, diametro, diametro, 90, 90);
+            caminho.CloseFigure();
+            return new Region(caminho);
         }
 
         private void ConfigurarTabela()

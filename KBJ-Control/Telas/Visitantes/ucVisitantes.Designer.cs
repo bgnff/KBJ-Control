@@ -38,6 +38,7 @@
             pnlPesquisaVisitantes = new Panel();
             btnPesquisarVisitantes = new Button();
             txtPesquisaVisitantes = new TextBox();
+            pnlTabelaCadastros = new KBJK_Control.Controles.TabelaArredondada();
             dgvVisitantes = new DataGridView();
             colNome = new DataGridViewTextBoxColumn();
             colDocumento = new DataGridViewTextBoxColumn();
@@ -47,6 +48,7 @@
             tlpVisitantes.SuspendLayout();
             pnlCabecalhoVisitantes.SuspendLayout();
             pnlPesquisaVisitantes.SuspendLayout();
+            pnlTabelaCadastros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvVisitantes).BeginInit();
             SuspendLayout();
             // 
@@ -56,7 +58,7 @@
             tlpVisitantes.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tlpVisitantes.Controls.Add(pnlCabecalhoVisitantes, 0, 0);
             tlpVisitantes.Controls.Add(pnlPesquisaVisitantes, 0, 1);
-            tlpVisitantes.Controls.Add(dgvVisitantes, 0, 2);
+            tlpVisitantes.Controls.Add(pnlTabelaCadastros, 0, 2);
             tlpVisitantes.Controls.Add(lblTotalVisitantes, 0, 3);
             tlpVisitantes.Dock = DockStyle.Fill;
             tlpVisitantes.Location = new Point(0, 0);
@@ -92,9 +94,9 @@
             btnCadastrarVisitante.FlatAppearance.BorderSize = 0;
             btnCadastrarVisitante.FlatStyle = FlatStyle.Flat;
             btnCadastrarVisitante.ForeColor = Color.Black;
-            btnCadastrarVisitante.Location = new Point(765, 17);
+            btnCadastrarVisitante.Location = new Point(765, 11);
             btnCadastrarVisitante.Name = "btnCadastrarVisitante";
-            btnCadastrarVisitante.Size = new Size(160, 36);
+            btnCadastrarVisitante.Size = new Size(160, 54);
             btnCadastrarVisitante.TabIndex = 2;
             btnCadastrarVisitante.Text = "Cadastrar visitante";
             btnCadastrarVisitante.UseVisualStyleBackColor = false;
@@ -106,7 +108,7 @@
             lblTituloVisitantes.ForeColor = Color.FromArgb(48, 55, 65);
             lblTituloVisitantes.Location = new Point(0, 0);
             lblTituloVisitantes.Name = "lblTituloVisitantes";
-            lblTituloVisitantes.Size = new Size(143, 37);
+            lblTituloVisitantes.Size = new Size(176, 46);
             lblTituloVisitantes.TabIndex = 0;
             lblTituloVisitantes.Text = "Visitantes";
             // 
@@ -116,7 +118,7 @@
             lblDescricaoVisitantes.ForeColor = Color.FromArgb(101, 112, 124);
             lblDescricaoVisitantes.Location = new Point(0, 42);
             lblDescricaoVisitantes.Name = "lblDescricaoVisitantes";
-            lblDescricaoVisitantes.Size = new Size(285, 19);
+            lblDescricaoVisitantes.Size = new Size(354, 23);
             lblDescricaoVisitantes.TabIndex = 1;
             lblDescricaoVisitantes.Text = "Consulte e gerencie os visitantes cadastrados";
             // 
@@ -138,9 +140,9 @@
             btnPesquisarVisitantes.FlatAppearance.BorderColor = Color.FromArgb(212, 165, 30);
             btnPesquisarVisitantes.FlatStyle = FlatStyle.Flat;
             btnPesquisarVisitantes.ForeColor = Color.FromArgb(48, 55, 65);
-            btnPesquisarVisitantes.Location = new Point(352, 6);
+            btnPesquisarVisitantes.Location = new Point(362, 3);
             btnPesquisarVisitantes.Name = "btnPesquisarVisitantes";
-            btnPesquisarVisitantes.Size = new Size(110, 36);
+            btnPesquisarVisitantes.Size = new Size(110, 39);
             btnPesquisarVisitantes.TabIndex = 1;
             btnPesquisarVisitantes.Text = "Pesquisar";
             btnPesquisarVisitantes.UseVisualStyleBackColor = false;
@@ -153,8 +155,20 @@
             txtPesquisaVisitantes.Location = new Point(0, 12);
             txtPesquisaVisitantes.Name = "txtPesquisaVisitantes";
             txtPesquisaVisitantes.PlaceholderText = "Pesquise por nome ou documento";
-            txtPesquisaVisitantes.Size = new Size(340, 25);
+            txtPesquisaVisitantes.Size = new Size(340, 30);
             txtPesquisaVisitantes.TabIndex = 0;
+            // 
+            // pnlTabelaCadastros
+            // 
+            pnlTabelaCadastros.BackColor = Color.White;
+            pnlTabelaCadastros.Controls.Add(dgvVisitantes);
+            pnlTabelaCadastros.Dock = DockStyle.Fill;
+            pnlTabelaCadastros.Location = new Point(24, 160);
+            pnlTabelaCadastros.Margin = new Padding(0);
+            pnlTabelaCadastros.Name = "pnlTabelaCadastros";
+            pnlTabelaCadastros.Padding = new Padding(1);
+            pnlTabelaCadastros.Size = new Size(952, 480);
+            pnlTabelaCadastros.TabIndex = 2;
             // 
             // dgvVisitantes
             // 
@@ -165,13 +179,13 @@
             dgvVisitantes.BackgroundColor = Color.White;
             dgvVisitantes.BorderStyle = BorderStyle.None;
             dgvVisitantes.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dgvVisitantes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dgvVisitantes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(237, 240, 243);
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(20, 34, 55);
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(48, 55, 65);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(237, 240, 243);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(48, 55, 65);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(20, 34, 55);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvVisitantes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvVisitantes.ColumnHeadersHeight = 40;
@@ -188,21 +202,23 @@
             dgvVisitantes.Dock = DockStyle.Fill;
             dgvVisitantes.EnableHeadersVisualStyles = false;
             dgvVisitantes.GridColor = Color.FromArgb(212, 217, 223);
-            dgvVisitantes.Location = new Point(24, 160);
+            dgvVisitantes.Location = new Point(1, 1);
             dgvVisitantes.Margin = new Padding(0);
             dgvVisitantes.MultiSelect = false;
             dgvVisitantes.Name = "dgvVisitantes";
             dgvVisitantes.ReadOnly = true;
             dgvVisitantes.RowHeadersVisible = false;
+            dgvVisitantes.RowHeadersWidth = 51;
             dgvVisitantes.RowTemplate.Height = 36;
             dgvVisitantes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvVisitantes.Size = new Size(952, 480);
+            dgvVisitantes.Size = new Size(950, 478);
             dgvVisitantes.TabIndex = 2;
             // 
             // colNome
             // 
             colNome.FillWeight = 140F;
             colNome.HeaderText = "Nome";
+            colNome.MinimumWidth = 6;
             colNome.Name = "colNome";
             colNome.ReadOnly = true;
             // 
@@ -210,6 +226,7 @@
             // 
             colDocumento.FillWeight = 110F;
             colDocumento.HeaderText = "Documento";
+            colDocumento.MinimumWidth = 6;
             colDocumento.Name = "colDocumento";
             colDocumento.ReadOnly = true;
             // 
@@ -217,6 +234,7 @@
             // 
             colEmpresa.FillWeight = 150F;
             colEmpresa.HeaderText = "Empresa de origem";
+            colEmpresa.MinimumWidth = 6;
             colEmpresa.Name = "colEmpresa";
             colEmpresa.ReadOnly = true;
             // 
@@ -224,6 +242,7 @@
             // 
             colSelecionarEntrada.FillWeight = 130F;
             colSelecionarEntrada.HeaderText = "Ação";
+            colSelecionarEntrada.MinimumWidth = 6;
             colSelecionarEntrada.Name = "colSelecionarEntrada";
             colSelecionarEntrada.ReadOnly = true;
             colSelecionarEntrada.Text = "Selecionar para entrada";
@@ -234,16 +253,16 @@
             lblTotalVisitantes.Anchor = AnchorStyles.Left;
             lblTotalVisitantes.AutoSize = true;
             lblTotalVisitantes.ForeColor = Color.FromArgb(101, 112, 124);
-            lblTotalVisitantes.Location = new Point(24, 648);
+            lblTotalVisitantes.Location = new Point(24, 646);
             lblTotalVisitantes.Margin = new Padding(0);
             lblTotalVisitantes.Name = "lblTotalVisitantes";
-            lblTotalVisitantes.Size = new Size(160, 19);
+            lblTotalVisitantes.Size = new Size(197, 23);
             lblTotalVisitantes.TabIndex = 3;
             lblTotalVisitantes.Text = "Visitantes cadastrados: 0";
             // 
             // ucVisitantes
             // 
-            AutoScaleDimensions = new SizeF(7F, 17F);
+            AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.FromArgb(244, 245, 247);
@@ -257,6 +276,7 @@
             pnlCabecalhoVisitantes.PerformLayout();
             pnlPesquisaVisitantes.ResumeLayout(false);
             pnlPesquisaVisitantes.PerformLayout();
+            pnlTabelaCadastros.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvVisitantes).EndInit();
             ResumeLayout(false);
         }
@@ -272,6 +292,7 @@
         private Button btnPesquisarVisitantes;
         private TextBox txtPesquisaVisitantes;
         private DataGridView dgvVisitantes;
+        private KBJK_Control.Controles.TabelaArredondada pnlTabelaCadastros;
         private DataGridViewTextBoxColumn colNome;
         private DataGridViewTextBoxColumn colDocumento;
         private DataGridViewTextBoxColumn colEmpresa;

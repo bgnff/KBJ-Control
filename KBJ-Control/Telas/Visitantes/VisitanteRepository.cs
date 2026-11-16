@@ -57,4 +57,19 @@ public class VisitanteRepository
 
         return tabela;
     }
+    public int ContarCadastrosHoje()
+    {
+        const string sql = """
+        SELECT COUNT(*)
+        FROM visitantes
+        WHERE DATE(data_registro) = CURDATE()
+        """;
+
+        using var conexao = ConexaoBD.ObterConexao();
+        using var comando = new MySqlConnector.MySqlCommand(sql, conexao);
+
+        conexao.Open();
+
+        return Convert.ToInt32(comando.ExecuteScalar());
+    }
 }
