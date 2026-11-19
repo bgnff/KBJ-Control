@@ -31,7 +31,7 @@ namespace KBJK_Control.Telas.Principal
             InitializeComponent();
             Icon = IconeAplicacao.Criar();
 
-            ConfigurarIcones();
+           
             CarregarPerfilUsuario();
             AnimacaoUI.AnimarAbertura(this);
             AbrirTela(new ucDashboard(usuarioId));
@@ -95,34 +95,6 @@ namespace KBJK_Control.Telas.Principal
 
                 botao.Image = novaImagem;
                 imagemAnterior?.Dispose();
-            }
-        }
-
-        private void ConfigurarIcones()
-        {
-            btnDashboard.Tag = IconChar.ChartLine;
-            btnRecepcao.Tag = IconChar.DoorOpen;
-            btnVisitantes.Tag = IconChar.Users;
-            btnHistorico.Tag = IconChar.Clock;
-            btnSair.Tag = IconChar.SignOutAlt;
-
-            Button[] botoes =
-            {
-        btnDashboard, btnRecepcao, btnVisitantes,
-        btnHistorico, btnSair
-    };
-
-            foreach (Button botao in botoes)
-            {
-                botao.ImageAlign = ContentAlignment.MiddleLeft;
-                botao.TextAlign = ContentAlignment.MiddleLeft;
-                botao.TextImageRelation = TextImageRelation.ImageBeforeText;
-                botao.Padding = new Padding(28, 0, 0, 0);
-
-                // Espaçamento entre o ícone e o texto.
-                botao.Text = "  " + botao.Text.Trim();
-
-                AtualizarIcone(botao);
             }
         }
 

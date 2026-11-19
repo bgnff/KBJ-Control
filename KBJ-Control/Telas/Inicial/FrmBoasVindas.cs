@@ -28,11 +28,7 @@ namespace KBJK_Control.Telas.Inicial
             AplicarCantosArredondados(btnIniciar, 8);
         }
 
-        private void FrmBoasVindas_Load(object sender, EventArgs e)
-        {
-            AtualizarEstadoMaximizar();
-            AplicarCantosArredondados(btnIniciar, 8);
-        }
+   
 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
