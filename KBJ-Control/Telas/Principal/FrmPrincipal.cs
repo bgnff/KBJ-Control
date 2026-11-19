@@ -126,24 +126,6 @@ namespace KBJK_Control.Telas.Principal
             }
         }
 
-        private void AtualizarIcone(Button botao)
-        {
-            if (botao.Tag is not IconChar icone)
-                return;
-
-            using (var gerador = new IconButton())
-            {
-                gerador.IconChar = icone;
-                gerador.IconSize = 24;
-                gerador.IconColor = botao.ForeColor;
-
-                Image novaImagem = (Image)gerador.Image.Clone();
-                Image imagemAnterior = botao.Image;
-
-                botao.Image = novaImagem;
-                imagemAnterior?.Dispose();
-            }
-        }
 
         private void SelecionarBotao(Button selecionado)
         {
