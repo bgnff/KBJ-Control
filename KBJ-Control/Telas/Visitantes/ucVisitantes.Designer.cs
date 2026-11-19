@@ -32,10 +32,10 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             tlpVisitantes = new TableLayoutPanel();
             pnlCabecalhoVisitantes = new Panel();
-            btnCadastrarVisitante = new Button();
             lblTituloVisitantes = new Label();
             lblDescricaoVisitantes = new Label();
             pnlPesquisaVisitantes = new Panel();
+            btnCadastrarVisitante = new Button();
             btnPesquisarVisitantes = new Button();
             txtPesquisaVisitantes = new TextBox();
             pnlTabelaCadastros = new KBJK_Control.Controles.TabelaArredondada();
@@ -75,7 +75,6 @@
             // 
             // pnlCabecalhoVisitantes
             // 
-            pnlCabecalhoVisitantes.Controls.Add(btnCadastrarVisitante);
             pnlCabecalhoVisitantes.Controls.Add(lblTituloVisitantes);
             pnlCabecalhoVisitantes.Controls.Add(lblDescricaoVisitantes);
             pnlCabecalhoVisitantes.Dock = DockStyle.Fill;
@@ -86,21 +85,6 @@
             pnlCabecalhoVisitantes.Size = new Size(952, 72);
             pnlCabecalhoVisitantes.TabIndex = 0;
             // 
-            // btnCadastrarVisitante
-            // 
-            btnCadastrarVisitante.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnCadastrarVisitante.BackColor = Color.FromArgb(212, 165, 30);
-            btnCadastrarVisitante.Cursor = Cursors.Hand;
-            btnCadastrarVisitante.FlatAppearance.BorderSize = 0;
-            btnCadastrarVisitante.FlatStyle = FlatStyle.Flat;
-            btnCadastrarVisitante.ForeColor = Color.Black;
-            btnCadastrarVisitante.Location = new Point(765, 11);
-            btnCadastrarVisitante.Name = "btnCadastrarVisitante";
-            btnCadastrarVisitante.Size = new Size(160, 54);
-            btnCadastrarVisitante.TabIndex = 2;
-            btnCadastrarVisitante.Text = "Cadastrar visitante";
-            btnCadastrarVisitante.UseVisualStyleBackColor = false;
-            // 
             // lblTituloVisitantes
             // 
             lblTituloVisitantes.AutoSize = true;
@@ -108,7 +92,7 @@
             lblTituloVisitantes.ForeColor = Color.FromArgb(48, 55, 65);
             lblTituloVisitantes.Location = new Point(0, 0);
             lblTituloVisitantes.Name = "lblTituloVisitantes";
-            lblTituloVisitantes.Size = new Size(176, 46);
+            lblTituloVisitantes.Size = new Size(143, 37);
             lblTituloVisitantes.TabIndex = 0;
             lblTituloVisitantes.Text = "Visitantes";
             // 
@@ -118,12 +102,13 @@
             lblDescricaoVisitantes.ForeColor = Color.FromArgb(101, 112, 124);
             lblDescricaoVisitantes.Location = new Point(0, 42);
             lblDescricaoVisitantes.Name = "lblDescricaoVisitantes";
-            lblDescricaoVisitantes.Size = new Size(354, 23);
+            lblDescricaoVisitantes.Size = new Size(285, 19);
             lblDescricaoVisitantes.TabIndex = 1;
             lblDescricaoVisitantes.Text = "Consulte e gerencie os visitantes cadastrados";
             // 
             // pnlPesquisaVisitantes
             // 
+            pnlPesquisaVisitantes.Controls.Add(btnCadastrarVisitante);
             pnlPesquisaVisitantes.Controls.Add(btnPesquisarVisitantes);
             pnlPesquisaVisitantes.Controls.Add(txtPesquisaVisitantes);
             pnlPesquisaVisitantes.Dock = DockStyle.Fill;
@@ -133,6 +118,22 @@
             pnlPesquisaVisitantes.Size = new Size(952, 64);
             pnlPesquisaVisitantes.TabIndex = 1;
             // 
+            // btnCadastrarVisitante
+            // 
+            btnCadastrarVisitante.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnCadastrarVisitante.BackColor = Color.FromArgb(212, 165, 30);
+            btnCadastrarVisitante.Cursor = Cursors.Hand;
+            btnCadastrarVisitante.FlatAppearance.BorderSize = 0;
+            btnCadastrarVisitante.FlatStyle = FlatStyle.Flat;
+            btnCadastrarVisitante.ForeColor = Color.Black;
+            btnCadastrarVisitante.Location = new Point(756, 0);
+            btnCadastrarVisitante.Name = "btnCadastrarVisitante";
+            btnCadastrarVisitante.Size = new Size(160, 42);
+            btnCadastrarVisitante.TabIndex = 2;
+            btnCadastrarVisitante.Text = "Cadastrar visitante";
+            btnCadastrarVisitante.UseVisualStyleBackColor = false;
+            btnCadastrarVisitante.Click += btnCadastrarVisitante_Click_1;
+            // 
             // btnPesquisarVisitantes
             // 
             btnPesquisarVisitantes.BackColor = Color.FromArgb(212, 165, 30);
@@ -140,9 +141,9 @@
             btnPesquisarVisitantes.FlatAppearance.BorderColor = Color.FromArgb(212, 165, 30);
             btnPesquisarVisitantes.FlatStyle = FlatStyle.Flat;
             btnPesquisarVisitantes.ForeColor = Color.FromArgb(48, 55, 65);
-            btnPesquisarVisitantes.Location = new Point(362, 3);
+            btnPesquisarVisitantes.Location = new Point(362, 0);
             btnPesquisarVisitantes.Name = "btnPesquisarVisitantes";
-            btnPesquisarVisitantes.Size = new Size(110, 39);
+            btnPesquisarVisitantes.Size = new Size(110, 42);
             btnPesquisarVisitantes.TabIndex = 1;
             btnPesquisarVisitantes.Text = "Pesquisar";
             btnPesquisarVisitantes.UseVisualStyleBackColor = false;
@@ -155,7 +156,7 @@
             txtPesquisaVisitantes.Location = new Point(0, 12);
             txtPesquisaVisitantes.Name = "txtPesquisaVisitantes";
             txtPesquisaVisitantes.PlaceholderText = "Pesquise por nome ou documento";
-            txtPesquisaVisitantes.Size = new Size(340, 30);
+            txtPesquisaVisitantes.Size = new Size(340, 25);
             txtPesquisaVisitantes.TabIndex = 0;
             // 
             // pnlTabelaCadastros
@@ -253,16 +254,16 @@
             lblTotalVisitantes.Anchor = AnchorStyles.Left;
             lblTotalVisitantes.AutoSize = true;
             lblTotalVisitantes.ForeColor = Color.FromArgb(101, 112, 124);
-            lblTotalVisitantes.Location = new Point(24, 646);
+            lblTotalVisitantes.Location = new Point(24, 648);
             lblTotalVisitantes.Margin = new Padding(0);
             lblTotalVisitantes.Name = "lblTotalVisitantes";
-            lblTotalVisitantes.Size = new Size(197, 23);
+            lblTotalVisitantes.Size = new Size(160, 19);
             lblTotalVisitantes.TabIndex = 3;
             lblTotalVisitantes.Text = "Visitantes cadastrados: 0";
             // 
             // ucVisitantes
             // 
-            AutoScaleDimensions = new SizeF(9F, 23F);
+            AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.FromArgb(244, 245, 247);

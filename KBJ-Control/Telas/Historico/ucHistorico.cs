@@ -128,5 +128,10 @@ namespace KBJK_Control.Telas.Historico
             e.CellStyle.ForeColor = situacao.Equals("Em andamento", StringComparison.OrdinalIgnoreCase) ? Color.FromArgb(40, 100, 71) : Color.FromArgb(90, 103, 123);
         }
         private void cmbSituacaoHistorico_SelectedIndexChanged(object sender, EventArgs e) => AtualizarFiltroAutomatico();
+
+        private void txtPesquisaHistorico_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

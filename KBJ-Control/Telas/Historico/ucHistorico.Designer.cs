@@ -129,12 +129,12 @@
             tlpFiltrosHistorico.Controls.Add(lblDataInicial, 1, 0);
             tlpFiltrosHistorico.Controls.Add(lblDataFinal, 2, 0);
             tlpFiltrosHistorico.Controls.Add(lblSituacaoHistorico, 3, 0);
-            tlpFiltrosHistorico.Controls.Add(txtPesquisaHistorico, 0, 1);
             tlpFiltrosHistorico.Controls.Add(dtpDataInicial, 1, 1);
             tlpFiltrosHistorico.Controls.Add(dtpDataFinal, 2, 1);
             tlpFiltrosHistorico.Controls.Add(cmbSituacaoHistorico, 3, 1);
             tlpFiltrosHistorico.Controls.Add(btnFiltrarHistorico, 5, 1);
             tlpFiltrosHistorico.Controls.Add(btnLimparFiltros, 4, 1);
+            tlpFiltrosHistorico.Controls.Add(txtPesquisaHistorico, 0, 1);
             tlpFiltrosHistorico.Dock = DockStyle.Fill;
             tlpFiltrosHistorico.Location = new Point(24, 96);
             tlpFiltrosHistorico.Margin = new Padding(0);
@@ -190,6 +190,7 @@
             txtPesquisaHistorico.PlaceholderText = "Pesquise por nome ou documento";
             txtPesquisaHistorico.Size = new Size(197, 25);
             txtPesquisaHistorico.TabIndex = 4;
+            txtPesquisaHistorico.TextChanged += txtPesquisaHistorico_TextChanged;
             // 
             // dtpDataInicial
             // 

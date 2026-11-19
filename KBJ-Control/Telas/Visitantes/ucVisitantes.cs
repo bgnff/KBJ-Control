@@ -115,5 +115,10 @@ namespace KBJK_Control.Telas.Visitantes
                 CarregarVisitantes();
             }
         }
+
+        private void btnCadastrarVisitante_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

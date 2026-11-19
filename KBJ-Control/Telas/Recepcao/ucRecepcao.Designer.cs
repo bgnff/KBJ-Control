@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             tlpRecepcao = new TableLayoutPanel();
             pnlRow1 = new Panel();
             btnREntrada = new Button();
@@ -77,7 +77,6 @@
             // pnlRow1
             // 
             pnlRow1.BackColor = Color.Transparent;
-            pnlRow1.Controls.Add(btnREntrada);
             pnlRow1.Controls.Add(lblDescricao);
             pnlRow1.Controls.Add(lblTitulo);
             pnlRow1.Dock = DockStyle.Fill;
@@ -93,12 +92,14 @@
             btnREntrada.BackColor = Color.FromArgb(212, 165, 30);
             btnREntrada.Cursor = Cursors.Hand;
             btnREntrada.FlatAppearance.BorderSize = 0;
+            btnREntrada.FlatAppearance.MouseDownBackColor = Color.FromArgb(190, 145, 20);
+            btnREntrada.FlatAppearance.MouseOverBackColor = Color.FromArgb(230, 184, 54);
             btnREntrada.FlatStyle = FlatStyle.Flat;
             btnREntrada.Font = new Font("Arial", 10F);
-            btnREntrada.ForeColor = Color.Black;
-            btnREntrada.Location = new Point(836, 16);
+            btnREntrada.ForeColor = Color.FromArgb(20, 35, 57);
+            btnREntrada.Location = new Point(851, 4);
             btnREntrada.Name = "btnREntrada";
-            btnREntrada.Size = new Size(160, 36);
+            btnREntrada.Size = new Size(180, 42);
             btnREntrada.TabIndex = 3;
             btnREntrada.Text = "Registrar Entrada";
             btnREntrada.UseVisualStyleBackColor = false;
@@ -129,6 +130,7 @@
             // pnlRow2
             // 
             pnlRow2.BackColor = Color.Transparent;
+            pnlRow2.Controls.Add(btnREntrada);
             pnlRow2.Controls.Add(txtPesquisa);
             pnlRow2.Controls.Add(btnPesquisar);
             pnlRow2.Dock = DockStyle.Fill;
@@ -151,14 +153,17 @@
             // 
             // btnPesquisar
             // 
-            btnPesquisar.BackColor = Color.White;
+            btnPesquisar.BackColor = Color.FromArgb(20, 35, 57);
             btnPesquisar.Cursor = Cursors.Hand;
             btnPesquisar.FlatAppearance.BorderColor = Color.FromArgb(212, 217, 223);
+            btnPesquisar.FlatAppearance.BorderSize = 0;
+            btnPesquisar.FlatAppearance.MouseDownBackColor = Color.FromArgb(12, 25, 43);
+            btnPesquisar.FlatAppearance.MouseOverBackColor = Color.FromArgb(35, 55, 82);
             btnPesquisar.FlatStyle = FlatStyle.Flat;
-            btnPesquisar.ForeColor = Color.FromArgb(48, 55, 65);
+            btnPesquisar.ForeColor = Color.White;
             btnPesquisar.Location = new Point(349, 6);
             btnPesquisar.Name = "btnPesquisar";
-            btnPesquisar.Size = new Size(110, 36);
+            btnPesquisar.Size = new Size(120, 36);
             btnPesquisar.TabIndex = 2;
             btnPesquisar.Text = "Pesquisar";
             btnPesquisar.UseVisualStyleBackColor = false;
@@ -173,28 +178,29 @@
             dgvPresentes.BorderStyle = BorderStyle.None;
             dgvPresentes.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvPresentes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(237, 240, 243);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(48, 55, 65);
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvPresentes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dgvPresentes.ColumnHeadersHeight = 40;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(20, 35, 57);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.Padding = new Padding(6, 0, 0, 0);
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(20, 35, 57);
+            dataGridViewCellStyle5.SelectionForeColor = Color.White;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgvPresentes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dgvPresentes.ColumnHeadersHeight = 42;
             dgvPresentes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvPresentes.Columns.AddRange(new DataGridViewColumn[] { colVisitante, colDocumento, colEmpresa, colDestino, colEntrada, colSaida });
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 10F);
-            dataGridViewCellStyle4.ForeColor = Color.FromArgb(48, 55, 65);
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(250, 239, 203);
-            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvPresentes.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(48, 55, 65);
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(250, 239, 203);
+            dataGridViewCellStyle6.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgvPresentes.DefaultCellStyle = dataGridViewCellStyle6;
             dgvPresentes.Dock = DockStyle.Fill;
             dgvPresentes.EnableHeadersVisualStyles = false;
-            dgvPresentes.GridColor = Color.FromArgb(212, 217, 223);
+            dgvPresentes.GridColor = Color.FromArgb(220, 224, 230);
             dgvPresentes.Location = new Point(24, 179);
             dgvPresentes.Margin = new Padding(0);
             dgvPresentes.MultiSelect = false;
@@ -202,7 +208,7 @@
             dgvPresentes.ReadOnly = true;
             dgvPresentes.RowHeadersVisible = false;
             dgvPresentes.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dgvPresentes.RowTemplate.Height = 36;
+            dgvPresentes.RowTemplate.Height = 42;
             dgvPresentes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvPresentes.Size = new Size(1052, 493);
             dgvPresentes.TabIndex = 2;
